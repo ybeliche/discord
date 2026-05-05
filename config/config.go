@@ -32,10 +32,11 @@ type Schedule struct {
 }
 
 type Config struct {
-	Timezone   string     `yaml:"timezone"`    // e.g. "Europe/Moscow"
-	TeamRoleID string     `yaml:"team_role_id"`
-	Polls      []Poll     `yaml:"polls"`
-	Schedules  []Schedule `yaml:"schedules"`
+	Timezone     string     `yaml:"timezone"` // e.g. "Europe/Moscow"
+	TeamRoleID   string     `yaml:"team_role_id"`
+	TaggingEmoji string     `yaml:"tagging_emoji"`
+	Polls        []Poll     `yaml:"polls"`
+	Schedules    []Schedule `yaml:"schedules"`
 }
 
 func Load(path string) (*Config, error) {

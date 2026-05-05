@@ -84,7 +84,7 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 
 	if cfg.TeamRoleID != "" {
 		for channelID := range postedChannels {
-			if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
+			if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>\n\nГоспода! Опросы уже есть, голосуем!  <:Toni_Starkovski:%s>", cfg.TeamRoleID, cfg.TaggingEmoji)); err != nil {
 				log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
 			} else {
 				log.Printf("Action: team tagged in channel %s", channelID)
