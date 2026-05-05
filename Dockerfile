@@ -10,4 +10,4 @@ RUN apk add --no-cache ca-certificates tzdata
 WORKDIR /app
 COPY --from=builder /app/bot .
 COPY config/ config/
-CMD ["./bot"]
+CMD ["/app/bot"]
