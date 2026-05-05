@@ -84,8 +84,14 @@ func Start(s *discordgo.Session, cfg *config.Config) *cron.Cron {
 			date := time.Now().In(loc).Format("02.01")
 			title := strings.ReplaceAll(sched.Title, "{date}", date)
 			log.Printf("Scheduler: posting %q title %q", sched.Poll, title)
-			if err := poll.Post(s, sched.ChannelID, title, p, cfg.TeamRoleID); err != nil {
+			if err := poll.Post(s, sched.ChannelID, title, p); err != nil {
 				log.Printf("Scheduler: failed to post %q: %v", sched.Poll, err)
+				return
+			}
+			if cfg.TeamRoleID != "" {
+				if _, err := s.ChannelMessageSend(sched.ChannelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
+					log.Printf("Scheduler: failed to tag team for %q: %v", sched.Poll, err)
+				}
 			}
 		}); err != nil {
 			log.Printf("Scheduler: failed to register cron for %q: %v", sched.Poll, err)

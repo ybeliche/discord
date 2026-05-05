@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"os/signal"
@@ -56,6 +57,7 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 		loc = time.UTC
 	}
 
+	postedChannels := map[string]bool{}
 	for _, sched := range cfg.Schedules {
 		if sched.ChannelID == "" {
 			log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
@@ -73,10 +75,23 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 		}
 		title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
 		log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
-		if err := poll.Post(s, sched.ChannelID, title, p, cfg.TeamRoleID); err != nil {
+		if err := poll.Post(s, sched.ChannelID, title, p); err != nil {
 			log.Printf("Action: failed to post %q: %v", sched.Poll, err)
+			continue
+		}
+		postedChannels[sched.ChannelID] = true
+	}
+
+	if cfg.TeamRoleID != "" {
+		for channelID := range postedChannels {
+			if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
+				log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
+			} else {
+				log.Printf("Action: team tagged in channel %s", channelID)
+			}
 		}
 	}
+
 	log.Println("Action: done.")
 }
 

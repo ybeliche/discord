@@ -1,6 +1,7 @@
 package commands
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/bwmarrin/discordgo"
@@ -19,10 +20,16 @@ func HandleQuestionnaire(s *discordgo.Session, i *discordgo.InteractionCreate, c
 		return
 	}
 
-	if err := poll.Post(s, i.ChannelID, eventTitle, p, cfg.TeamRoleID); err != nil {
+	if err := poll.Post(s, i.ChannelID, eventTitle, p); err != nil {
 		log.Printf("Failed to post poll: %v", err)
 		respond(s, i, "Failed to post poll.")
 		return
+	}
+
+	if cfg.TeamRoleID != "" {
+		if _, err := s.ChannelMessageSend(i.ChannelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
+			log.Printf("Failed to tag team: %v", err)
+		}
 	}
 
 	respond(s, i, "Poll posted.")

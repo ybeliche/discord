@@ -1,13 +1,11 @@
 package poll
 
 import (
-	"fmt"
-
 	"github.com/bwmarrin/discordgo"
 	"github.com/ybeliche/discord/config"
 )
 
-func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, teamRoleID string) error {
+func Post(s *discordgo.Session, channelID, title string, poll *config.Poll) error {
 	answers := make([]discordgo.PollAnswer, 0, len(poll.Answers))
 	for _, a := range poll.Answers {
 		media := &discordgo.PollMedia{Text: a.Text}
@@ -32,14 +30,6 @@ func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, team
 			Answers:          answers,
 		},
 	})
-	if err != nil {
-		return err
-	}
-
-	if teamRoleID != "" {
-		if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>", teamRoleID)); err != nil {
-			return err
-		}
-	}
-	return nil
+	
+	return err
 }
