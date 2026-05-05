@@ -21,11 +21,6 @@ func main() {
 	if token == "" {
 		log.Fatal("DISCORD_TOKEN env var not set")
 	}
-	guildID := os.Getenv("GUILD_ID")
-	if guildID == "" {
-		log.Fatal("GUILD_ID env var not set")
-	}
-
 	cfg, err := config.Load("config/config.yaml")
 	if err != nil {
 		log.Fatalf("Failed to load config: %v", err)
@@ -47,7 +42,7 @@ func main() {
 		return
 	}
 
-	runBotMode(dg, cfg, guildID)
+	runBotMode(dg, cfg)
 }
 
 func runActionMode(s *discordgo.Session, cfg *config.Config) {
@@ -57,37 +52,40 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 		loc = time.UTC
 	}
 
-	postedChannels := map[string]bool{}
-	for _, sched := range cfg.Schedules {
-		if sched.ChannelID == "" {
-			log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
-			continue
+	for _, ch := range cfg.Channels {
+		postedChannels := map[string]bool{}
+		for _, sched := range ch.Schedules {
+			if sched.ChannelID == "" {
+				log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
+				continue
+			}
+			p, err := ch.FindPoll(sched.Poll)
+			if err != nil {
+				log.Printf("Action: %v", err)
+				continue
+			}
+			next, err := scheduler.NextOccurrence(sched.Day, loc)
+			if err != nil {
+				log.Printf("Action: skipping %q — %v", sched.Poll, err)
+				continue
+			}
+			title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
+			log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
+			if err := poll.Post(s, sched.ChannelID, title, &p); err != nil {
+				log.Printf("Action: failed to post %q: %v", sched.Poll, err)
+				continue
+			}
+			postedChannels[sched.ChannelID] = true
 		}
-		p, err := cfg.FindPoll(sched.Poll)
-		if err != nil {
-			log.Printf("Action: %v", err)
-			continue
-		}
-		next, err := scheduler.NextOccurrence(sched.Day, loc)
-		if err != nil {
-			log.Printf("Action: skipping %q — %v", sched.Poll, err)
-			continue
-		}
-		title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
-		log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
-		if err := poll.Post(s, sched.ChannelID, title, p); err != nil {
-			log.Printf("Action: failed to post %q: %v", sched.Poll, err)
-			continue
-		}
-		postedChannels[sched.ChannelID] = true
-	}
 
-	if cfg.TeamRoleID != "" {
-		for channelID := range postedChannels {
-			if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**  <:Toni_Starkovski:%s>", cfg.TeamRoleID, cfg.TaggingEmoji)); err != nil {
-				log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
-			} else {
-				log.Printf("Action: team tagged in channel %s", channelID)
+		if ch.TeamRoleID != "" {
+			for channelID := range postedChannels {
+				msg := fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**  <:%s:%s>", ch.TeamRoleID, ch.TaggingEmojiName, ch.TaggingEmojiId)
+				if _, err := s.ChannelMessageSend(channelID, msg); err != nil {
+					log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
+				} else {
+					log.Printf("Action: team tagged in channel %s", channelID)
+				}
 			}
 		}
 	}
@@ -95,7 +93,7 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 	log.Println("Action: done.")
 }
 
-func runBotMode(s *discordgo.Session, cfg *config.Config, guildID string) {
+func runBotMode(s *discordgo.Session, cfg *config.Config) {
 	s.AddHandler(onReady)
 	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 		if i.Type != discordgo.InteractionApplicationCommand {
@@ -107,7 +105,9 @@ func runBotMode(s *discordgo.Session, cfg *config.Config, guildID string) {
 		}
 	})
 
-	commands.RegisterCommands(s, guildID, cfg)
+	for _, guildID := range cfg.AllGuildIDs() {
+		commands.RegisterCommands(s, guildID, cfg)
+	}
 	cr := scheduler.Start(s, cfg)
 	if cr != nil {
 		defer cr.Stop()

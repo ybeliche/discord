@@ -52,10 +52,6 @@ func buildCron(day, at string) (string, error) {
 // Start runs the cron scheduler, firing polls on their configured schedule.
 // Returns the cron instance so the caller can Stop() it on shutdown.
 func Start(s *discordgo.Session, cfg *config.Config) *cron.Cron {
-	if len(cfg.Schedules) == 0 {
-		return nil
-	}
-
 	loc, err := time.LoadLocation(cfg.Timezone)
 	if err != nil {
 		log.Printf("Scheduler: invalid timezone %q, falling back to UTC: %v", cfg.Timezone, err)
@@ -63,43 +59,50 @@ func Start(s *discordgo.Session, cfg *config.Config) *cron.Cron {
 	}
 
 	c := cron.New(cron.WithLocation(loc))
+	registered := 0
 
-	for _, sched := range cfg.Schedules {
-		p, err := cfg.FindPoll(sched.Poll)
-		if err != nil {
-			log.Printf("Scheduler: skipping %q: %v", sched.Poll, err)
-			continue
-		}
-		if sched.ChannelID == "" {
-			log.Printf("Scheduler: skipping %q: channel_id not set", sched.Poll)
-			continue
-		}
-		expr, err := buildCron(sched.Day, sched.At)
-		if err != nil {
-			log.Printf("Scheduler: skipping %q: %v", sched.Poll, err)
-			continue
-		}
-
-		if _, err := c.AddFunc(expr, func() {
-			date := time.Now().In(loc).Format("02.01")
-			title := strings.ReplaceAll(sched.Title, "{date}", date)
-			log.Printf("Scheduler: posting %q title %q", sched.Poll, title)
-			if err := poll.Post(s, sched.ChannelID, title, p); err != nil {
-				log.Printf("Scheduler: failed to post %q: %v", sched.Poll, err)
-				return
+	for _, ch := range cfg.Channels {
+		for _, sched := range ch.Schedules {
+			p, err := ch.FindPoll(sched.Poll)
+			if err != nil {
+				log.Printf("Scheduler: skipping %q: %v", sched.Poll, err)
+				continue
 			}
-			if cfg.TeamRoleID != "" {
-				if _, err := s.ChannelMessageSend(sched.ChannelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
-					log.Printf("Scheduler: failed to tag team for %q: %v", sched.Poll, err)
+			if sched.ChannelID == "" {
+				log.Printf("Scheduler: skipping %q: channel_id not set", sched.Poll)
+				continue
+			}
+			expr, err := buildCron(sched.Day, sched.At)
+			if err != nil {
+				log.Printf("Scheduler: skipping %q: %v", sched.Poll, err)
+				continue
+			}
+
+			if _, err := c.AddFunc(expr, func() {
+				date := time.Now().In(loc).Format("02.01")
+				title := strings.ReplaceAll(sched.Title, "{date}", date)
+				log.Printf("Scheduler: posting %q title %q", sched.Poll, title)
+				if err := poll.Post(s, sched.ChannelID, title, &p); err != nil {
+					log.Printf("Scheduler: failed to post %q: %v", sched.Poll, err)
+					return
 				}
+				if ch.TeamRoleID != "" {
+					if _, err := s.ChannelMessageSend(sched.ChannelID, fmt.Sprintf("<@&%s>", ch.TeamRoleID)); err != nil {
+						log.Printf("Scheduler: failed to tag team for %q: %v", sched.Poll, err)
+					}
+				}
+			}); err != nil {
+				log.Printf("Scheduler: failed to register cron for %q: %v", sched.Poll, err)
+				continue
 			}
-		}); err != nil {
-			log.Printf("Scheduler: failed to register cron for %q: %v", sched.Poll, err)
-			continue
+			log.Printf("Scheduler: %q → every %s at %s %s (cron: %s)", sched.Poll, sched.Day, sched.At, cfg.Timezone, expr)
+			registered++
 		}
-		log.Printf("Scheduler: %q → every %s at %s %s (cron: %s)", sched.Poll, sched.Day, sched.At, cfg.Timezone, expr)
 	}
 
+	if registered == 0 {
+		return nil
+	}
 	c.Start()
 	return c
 }

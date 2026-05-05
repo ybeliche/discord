@@ -14,20 +14,20 @@ func HandleQuestionnaire(s *discordgo.Session, i *discordgo.InteractionCreate, c
 	eventTitle := opts[0].StringValue()
 	pollName := opts[1].StringValue()
 
-	p, err := cfg.FindPoll(pollName)
+	p, ch, err := cfg.FindPoll(pollName)
 	if err != nil {
 		respond(s, i, "Unknown poll type.")
 		return
 	}
 
-	if err := poll.Post(s, i.ChannelID, eventTitle, p); err != nil {
+	if err := poll.Post(s, i.ChannelID, eventTitle, &p); err != nil {
 		log.Printf("Failed to post poll: %v", err)
 		respond(s, i, "Failed to post poll.")
 		return
 	}
 
-	if cfg.TeamRoleID != "" {
-		if _, err := s.ChannelMessageSend(i.ChannelID, fmt.Sprintf("<@&%s>", cfg.TeamRoleID)); err != nil {
+	if ch.TeamRoleID != "" {
+		if _, err := s.ChannelMessageSend(i.ChannelID, fmt.Sprintf("<@&%s>", ch.TeamRoleID)); err != nil {
 			log.Printf("Failed to tag team: %v", err)
 		}
 	}

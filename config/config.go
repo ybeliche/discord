@@ -31,12 +31,18 @@ type Schedule struct {
 	At        string `yaml:"at"`    // HH:MM in the configured timezone
 }
 
+type Channel struct {
+	GuildID          string     `yaml:"team_guild_id"`
+	TeamRoleID       string     `yaml:"team_role_id"`
+	TaggingEmojiId   string     `yaml:"tagging_emoji_id"`
+	TaggingEmojiName string     `yaml:"tagging_emoji_name"`
+	Polls            []Poll     `yaml:"polls"`
+	Schedules        []Schedule `yaml:"schedules"`
+}
+
 type Config struct {
-	Timezone     string     `yaml:"timezone"` // e.g. "Europe/Moscow"
-	TeamRoleID   string     `yaml:"team_role_id"`
-	TaggingEmoji string     `yaml:"tagging_emoji"`
-	Polls        []Poll     `yaml:"polls"`
-	Schedules    []Schedule `yaml:"schedules"`
+	Timezone string             `yaml:"timezone"` // e.g. "Europe/Moscow"
+	Channels map[string]Channel `yaml:"channels"`
 }
 
 func Load(path string) (*Config, error) {
@@ -56,11 +62,52 @@ func Load(path string) (*Config, error) {
 	return &cfg, nil
 }
 
-func (cfg *Config) FindPoll(name string) (*Poll, error) {
-	for i := range cfg.Polls {
-		if cfg.Polls[i].Name == name {
-			return &cfg.Polls[i], nil
+// FindPoll searches a channel's polls by name.
+func (ch Channel) FindPoll(name string) (Poll, error) {
+	for _, p := range ch.Polls {
+		if p.Name == name {
+			return p, nil
 		}
 	}
-	return nil, fmt.Errorf("poll %q not found in config", name)
+	return Poll{}, fmt.Errorf("poll %q not found", name)
+}
+
+// FindPoll searches all channels for a poll by name, returning the poll and its channel.
+func (cfg *Config) FindPoll(name string) (Poll, Channel, error) {
+	for _, ch := range cfg.Channels {
+		for _, p := range ch.Polls {
+			if p.Name == name {
+				return p, ch, nil
+			}
+		}
+	}
+	return Poll{}, Channel{}, fmt.Errorf("poll %q not found in config", name)
+}
+
+// AllGuildIDs returns the unique guild IDs across all channels.
+func (cfg *Config) AllGuildIDs() []string {
+	seen := map[string]bool{}
+	var ids []string
+	for _, ch := range cfg.Channels {
+		if ch.GuildID != "" && !seen[ch.GuildID] {
+			seen[ch.GuildID] = true
+			ids = append(ids, ch.GuildID)
+		}
+	}
+	return ids
+}
+
+// AllPolls returns deduplicated polls across all channels (first occurrence wins).
+func (cfg *Config) AllPolls() []Poll {
+	seen := map[string]bool{}
+	var polls []Poll
+	for _, ch := range cfg.Channels {
+		for _, p := range ch.Polls {
+			if !seen[p.Name] {
+				seen[p.Name] = true
+				polls = append(polls, p)
+			}
+		}
+	}
+	return polls
 }

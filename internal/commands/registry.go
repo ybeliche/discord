@@ -8,8 +8,9 @@ import (
 )
 
 func RegisterCommands(s *discordgo.Session, guildID string, cfg *config.Config) {
-	choices := make([]*discordgo.ApplicationCommandOptionChoice, 0, len(cfg.Polls))
-	for _, p := range cfg.Polls {
+	polls := cfg.AllPolls()
+	choices := make([]*discordgo.ApplicationCommandOptionChoice, 0, len(polls))
+	for _, p := range polls {
 		choices = append(choices, &discordgo.ApplicationCommandOptionChoice{
 			Name:  p.Label,
 			Value: p.Name,

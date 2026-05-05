@@ -1,68 +1,133 @@
 timezone: "Europe/Moscow"
-team_role_id: "1501262547423072307"
-tagging_emoji: "1501263213755629568"
 
-polls:
-  - name: friday_event
-    label: "Пятничный ивент"
-    duration_hours: 24
-    allow_multiselect: false
-    answers:
-      - text: "Иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Опоздаю"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Не иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
+channels:
+  second_squad:
+    team_guild_id: "1391892744934527006"
+    team_role_id: "1501262547423072307"
+    tagging_emoji_id: "1501263213755629568"
+    tagging_emoji_name: "Toni_Starkovski"
+    schedules:
+      - poll: friday_event
+        channel_id: "1495891097199837206"
+        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+        day: friday
+        at: "22:00"
+      - poll: training
+        channel_id: "1495891097199837206"
+        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        day: saturday
+        at: "21:00"
+      - poll: saturday_event
+        channel_id: "1495891097199837206"
+        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
 
-  - name: saturday_event
-    label: "Субботний ивент"
-    duration_hours: 24
-    allow_multiselect: false
-    answers:
-      - text: "Иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Опоздаю"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Не иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
 
-  - name: training
-    label: "Полковая тренировка"
-    duration_hours: 24
-    allow_multiselect: false
-    answers:
-      - text: "Иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Опоздаю"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-      - text: "Не иду"
-        emoji_name: "Mobile_Cadets"
-        emoji_id: "1501253320889864192"
-
-schedules:
-  - poll: friday_event
-    channel_id: "1495891097199837206"
-    title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
-    day: friday
-    at: "22:00"
-
-  - poll: saturday_event
-    channel_id: "1495891097199837206"
-    title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
-    day: saturday
-    at: "22:00"
-
-  - poll: training
-    channel_id: "1495891097199837206"
-    title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-    day: saturday
-    at: "21:00"
+  third_squad:
+    team_guild_id: "1391892744934527006"
+    team_role_id: "1501262547423072307"
+    tagging_emoji_id: "1501263213755629568"
+    tagging_emoji_name: "Toni_Starkovski"
+    schedules:
+      - poll: friday_event
+        channel_id: "1495891097199837206"
+        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+        day: friday
+        at: "22:00"
+      - poll: training
+        channel_id: "1495891097199837206"
+        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        day: saturday
+#        at: "21:00"
+      - poll: saturday_event
+        channel_id: "1495891097199837206"
+        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 24
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Опоздаю"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
+          - text: "Не иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1501253320889864192"
