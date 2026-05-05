@@ -8,14 +8,14 @@ polls:
     allow_multiselect: false
     answers:
       - text: "Иду"
-        emoji_name: "Derzhi_Dorogoy"
-        emoji_id: "1443507354116161646"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
       - text: "Опоздаю"
-        emoji_name: "Wojak_sorrows"
-        emoji_id: "1430805290818998304"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
       - text: "Не иду"
-        emoji_name: "Wojak_seen"
-        emoji_id: "1430805246367760384"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
 
   - name: saturday_event
     label: "Субботний ивент"
@@ -24,13 +24,13 @@ polls:
     answers:
       - text: "Иду"
         emoji_name: "Mobile_Cadets"
-        emoji_id: "1430158546590240768"
+        emoji_id: "1501253320889864192"
       - text: "Опоздаю"
-        emoji_name: "Wojak_seen"
-        emoji_id: "1430805246367760384"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
       - text: "Не иду"
-        emoji_name: "Stidno"
-        emoji_id: "1491366262121435176"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
 
   - name: training
     label: "Полковая тренировка"
@@ -38,14 +38,14 @@ polls:
     allow_multiselect: false
     answers:
       - text: "Иду"
-        emoji_name: "Derzhi_Dorogoy"
-        emoji_id: "1443507354116161646"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
       - text: "Опоздаю"
-        emoji_name: "Wojak_seen"
-        emoji_id: "1430805246367760384"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
       - text: "Не иду"
-        emoji_name: "Wojak_sorrows"
-        emoji_id: "1430805290818998304"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: "1501253320889864192"
 
 schedules:
   - poll: friday_event
