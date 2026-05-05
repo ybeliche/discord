@@ -30,7 +30,7 @@ func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, team
 	}
 
 	_, err := s.ChannelMessageSendComplex(channelID, &discordgo.MessageSend{
-		Content: content,
+		Content: "",
 		Poll: &discordgo.Poll{
 			Question:         discordgo.PollMedia{Text: title},
 			AllowMultiselect: poll.AllowMultiselect,
@@ -38,5 +38,11 @@ func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, team
 			Answers:          answers,
 		},
 	})
-	return err
+	if err != nil {
+		return err
+	}
+	_, contentError := s.ChannelMessageSendComplex(channelID, &discordgo.MessageSend{
+		Content: content,
+	})
+	return contentError
 }
