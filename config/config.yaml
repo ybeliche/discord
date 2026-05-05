@@ -1,5 +1,5 @@
 timezone: "Europe/Moscow"
-team_role_id: "1501184361410596914"
+team_role_id: "1501255448773529690"
 
 polls:
   - name: friday_event
@@ -49,19 +49,19 @@ polls:
 
 schedules:
   - poll: friday_event
-    channel_id: "1501183000501551227"
+    channel_id: "1495891097199837206"
     title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
     day: friday
     at: "22:00"
 
   - poll: saturday_event
-    channel_id: "1501183000501551227"
+    channel_id: "1495891097199837206"
     title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
     day: saturday
     at: "22:00"
 
   - poll: training
-    channel_id: "1501183000501551227"
+    channel_id: "1495891097199837206"
     title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
     day: saturday
     at: "21:00"

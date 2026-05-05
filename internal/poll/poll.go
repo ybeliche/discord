@@ -24,13 +24,7 @@ func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, team
 		answers = append(answers, discordgo.PollAnswer{Media: media})
 	}
 
-	content := ""
-	if teamRoleID != "" {
-		content = fmt.Sprintf("<@&%s>", teamRoleID)
-	}
-
 	_, err := s.ChannelMessageSendComplex(channelID, &discordgo.MessageSend{
-		Content: "",
 		Poll: &discordgo.Poll{
 			Question:         discordgo.PollMedia{Text: title},
 			AllowMultiselect: poll.AllowMultiselect,
@@ -41,8 +35,11 @@ func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, team
 	if err != nil {
 		return err
 	}
-	_, contentError := s.ChannelMessageSendComplex(channelID, &discordgo.MessageSend{
-		Content: content,
-	})
-	return contentError
+
+	if teamRoleID != "" {
+		if _, err := s.ChannelMessageSend(channelID, fmt.Sprintf("<@&%s>", teamRoleID)); err != nil {
+			return err
+		}
+	}
+	return nil
 }
