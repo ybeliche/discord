@@ -1,4 +1,4 @@
-package commands
+package scheduler
 
 import (
 	"fmt"
@@ -9,6 +9,7 @@ import (
 	"github.com/bwmarrin/discordgo"
 	"github.com/robfig/cron/v3"
 	"github.com/ybeliche/discord/config"
+	"github.com/ybeliche/discord/internal/poll"
 )
 
 var weekdays = map[string]time.Weekday{
@@ -48,10 +49,11 @@ func buildCron(day, at string) (string, error) {
 	return fmt.Sprintf("%s %s * * %d", parts[1], parts[0], int(wd)), nil
 }
 
-// StartScheduler runs the bot in persistent mode, firing polls via cron.
-func StartScheduler(s *discordgo.Session, cfg *config.Config) {
+// Start runs the cron scheduler, firing polls on their configured schedule.
+// Returns the cron instance so the caller can Stop() it on shutdown.
+func Start(s *discordgo.Session, cfg *config.Config) *cron.Cron {
 	if len(cfg.Schedules) == 0 {
-		return
+		return nil
 	}
 
 	loc, err := time.LoadLocation(cfg.Timezone)
@@ -63,8 +65,7 @@ func StartScheduler(s *discordgo.Session, cfg *config.Config) {
 	c := cron.New(cron.WithLocation(loc))
 
 	for _, sched := range cfg.Schedules {
-		sched := sched
-		poll, err := cfg.FindPoll(sched.Poll)
+		p, err := cfg.FindPoll(sched.Poll)
 		if err != nil {
 			log.Printf("Scheduler: skipping %q: %v", sched.Poll, err)
 			continue
@@ -79,17 +80,20 @@ func StartScheduler(s *discordgo.Session, cfg *config.Config) {
 			continue
 		}
 
-		c.AddFunc(expr, func() {
-			// In bot mode the cron fires on the event day itself, so today IS the date.
+		if _, err := c.AddFunc(expr, func() {
 			date := time.Now().In(loc).Format("02.01")
 			title := strings.ReplaceAll(sched.Title, "{date}", date)
 			log.Printf("Scheduler: posting %q title %q", sched.Poll, title)
-			if err := PostPoll(s, sched.ChannelID, title, poll, cfg.TeamRoleID); err != nil {
+			if err := poll.Post(s, sched.ChannelID, title, p, cfg.TeamRoleID); err != nil {
 				log.Printf("Scheduler: failed to post %q: %v", sched.Poll, err)
 			}
-		})
+		}); err != nil {
+			log.Printf("Scheduler: failed to register cron for %q: %v", sched.Poll, err)
+			continue
+		}
 		log.Printf("Scheduler: %q → every %s at %s %s (cron: %s)", sched.Poll, sched.Day, sched.At, cfg.Timezone, expr)
 	}
 
 	c.Start()
+	return c
 }

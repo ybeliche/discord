@@ -1,15 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/ybeliche/discord/commands"
 	"github.com/ybeliche/discord/config"
+	"github.com/ybeliche/discord/internal/commands"
+	"github.com/ybeliche/discord/internal/poll"
+	"github.com/ybeliche/discord/internal/scheduler"
 )
 
 func main() {
@@ -46,7 +49,6 @@ func main() {
 	runBotMode(dg, cfg, guildID)
 }
 
-// runActionMode posts all configured polls with auto-calculated upcoming dates, then exits.
 func runActionMode(s *discordgo.Session, cfg *config.Config) {
 	loc, err := time.LoadLocation(cfg.Timezone)
 	if err != nil {
@@ -59,26 +61,25 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 			log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
 			continue
 		}
-		poll, err := cfg.FindPoll(sched.Poll)
+		p, err := cfg.FindPoll(sched.Poll)
 		if err != nil {
 			log.Printf("Action: %v", err)
 			continue
 		}
-		next, err := commands.NextOccurrence(sched.Day, loc)
+		next, err := scheduler.NextOccurrence(sched.Day, loc)
 		if err != nil {
 			log.Printf("Action: skipping %q — %v", sched.Poll, err)
 			continue
 		}
 		title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
 		log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
-		if err := commands.PostPoll(s, sched.ChannelID, title, poll, cfg.TeamRoleID); err != nil {
+		if err := poll.Post(s, sched.ChannelID, title, p, cfg.TeamRoleID); err != nil {
 			log.Printf("Action: failed to post %q: %v", sched.Poll, err)
 		}
 	}
-	fmt.Println("Action: done.")
+	log.Println("Action: done.")
 }
 
-// runBotMode runs the persistent bot with slash commands and cron scheduler.
 func runBotMode(s *discordgo.Session, cfg *config.Config, guildID string) {
 	s.AddHandler(onReady)
 	s.AddHandler(func(s *discordgo.Session, i *discordgo.InteractionCreate) {
@@ -92,12 +93,18 @@ func runBotMode(s *discordgo.Session, cfg *config.Config, guildID string) {
 	})
 
 	commands.RegisterCommands(s, guildID, cfg)
-	commands.StartScheduler(s, cfg)
+	cr := scheduler.Start(s, cfg)
+	if cr != nil {
+		defer cr.Stop()
+	}
 
-	fmt.Println("Alabama bot is running...")
-	select {}
+	log.Println("Alabama bot is running...")
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
+	<-quit
+	log.Println("Shutting down...")
 }
 
 func onReady(s *discordgo.Session, r *discordgo.Ready) {
-	fmt.Printf("Logged in as %s\n", r.User.Username)
+	log.Printf("Logged in as %s\n", r.User.Username)
 }

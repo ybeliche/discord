@@ -1,4 +1,4 @@
-package commands
+package poll
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"github.com/ybeliche/discord/config"
 )
 
-func PostPoll(s *discordgo.Session, channelID, title string, poll *config.Poll, teamRoleID string) error {
+func Post(s *discordgo.Session, channelID, title string, poll *config.Poll, teamRoleID string) error {
 	answers := make([]discordgo.PollAnswer, 0, len(poll.Answers))
 	for _, a := range poll.Answers {
 		media := &discordgo.PollMedia{Text: a.Text}
