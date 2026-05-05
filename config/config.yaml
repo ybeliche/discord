@@ -1,0 +1,64 @@
+timezone: "Europe/Moscow"
+team_role_id: "1501184361410596914"
+
+polls:
+  - name: friday_event
+    label: "Пятничный ивент"
+    duration_hours: 24
+    allow_multiselect: false
+    answers:
+      - text: "Иду"
+        emoji_name: "Derzhi_Dorogoy"
+        emoji_id: ""
+      - text: "Опоздаю"
+        emoji_name: "Wojak_sorrows"
+        emoji_id: ""
+      - text: "Не иду"
+        emoji_name: "Wojak_seen"
+        emoji_id: ""
+
+  - name: saturday_event
+    label: "Субботний ивент"
+    duration_hours: 24
+    allow_multiselect: false
+    answers:
+      - text: "Иду"
+        emoji_name: "Mobile_Cadets"
+        emoji_id: ""
+      - text: "Опоздаю"
+        emoji_name: "Wojak_seen"
+        emoji_id: ""
+      - text: "Не иду"
+        emoji_name: "Stidno"
+        emoji_id: ""
+
+  - name: training
+    label: "Полковая тренировка"
+    duration_hours: 24
+    allow_multiselect: false
+    answers:
+      - text: "Иду"
+        emoji_name: "Derzhi_Dorogoy"
+        emoji_id: ""
+      - text: "Не иду"
+        emoji_name: "Wojak_sorrows"
+        emoji_id: ""
+
+schedules:
+  - poll: friday_event
+    channel_id: "1501182999645917338"
+    title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+    day: friday
+    at: "22:00"
+
+  - poll: saturday_event
+    channel_id: "1501182999645917338"
+    title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+    day: saturday
+    at: "22:00"
+
+  - poll: training
+    channel_id: "1501182999645917338"
+    title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+    day: saturday
+    at: "21:00"

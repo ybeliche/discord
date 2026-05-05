@@ -1,0 +1,18 @@
+name: "Alabama Discord Bot"
+description: "Posts upcoming event attendance polls to Discord"
+
+inputs:
+  discord-token:
+    description: "Discord bot token"
+    required: true
+  guild-id:
+    description: "Discord guild ID"
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    DISCORD_TOKEN: ${{ inputs.discord-token }}
+    GUILD_ID: ${{ inputs.guild-id }}
+    GITHUB_ACTIONS: "true"

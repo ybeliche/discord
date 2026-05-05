@@ -1,0 +1,19 @@
+name: Post Discord Event Polls
+
+on:
+  schedule:
+    - cron: "0 9 * * 3"
+  workflow_dispatch:
+
+jobs:
+  post-polls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Alabama bot
+        uses: ./.github/actions/run-bot
+        with:
+          discord-token: ${{ secrets.DISCORD_TOKEN }}
+          guild-id: ${{ secrets.GUILD_ID }}
