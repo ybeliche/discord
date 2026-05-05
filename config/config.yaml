@@ -9,7 +9,7 @@ polls:
     answers:
       - text: "Иду"
         emoji_name: "Derzhi_Dorogoy"
-        emoji_id: ""
+        emoji_id: "1495797960263471206"
       - text: "Опоздаю"
         emoji_name: "Wojak_sorrows"
         emoji_id: ""
@@ -24,7 +24,7 @@ polls:
     answers:
       - text: "Иду"
         emoji_name: "Mobile_Cadets"
-        emoji_id: ""
+        emoji_id: "1495797960263471206"
       - text: "Опоздаю"
         emoji_name: "Wojak_seen"
         emoji_id: ""
@@ -39,7 +39,7 @@ polls:
     answers:
       - text: "Иду"
         emoji_name: "Derzhi_Dorogoy"
-        emoji_id: ""
+        emoji_id: "1495797960263471206"
       - text: "Опоздаю"
         emoji_name: "Wojak_seen"
         emoji_id: ""
