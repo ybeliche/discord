@@ -26,7 +26,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 36
+        duration_hours: 48
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -40,7 +40,7 @@ channels:
             emoji_id: "1431203945346498671"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 36
+        duration_hours: 48
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -54,7 +54,7 @@ channels:
             emoji_id: "1431203945346498671"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 36
+        duration_hours: 48
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -92,7 +92,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 36
+        duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -106,7 +106,7 @@ channels:
             emoji_id: "1442280732948037642"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 36
+        duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -120,7 +120,7 @@ channels:
             emoji_id: "1442280732948037642"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 36
+        duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
