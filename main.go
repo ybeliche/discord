@@ -52,7 +52,13 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 		loc = time.UTC
 	}
 
-	for _, ch := range cfg.Channels {
+	today := strings.ToLower(time.Now().In(loc).Weekday().String())
+
+	for id, ch := range cfg.Channels {
+		if ch.PickDay != "" && strings.ToLower(ch.PickDay) != today {
+			log.Printf("Action: skipping channel %s (pick_day=%s, today=%s)", id, ch.PickDay, today)
+			continue
+		}
 		postedChannels := map[string]bool{}
 		for _, sched := range ch.Schedules {
 			if sched.ChannelID == "" {

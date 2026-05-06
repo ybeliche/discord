@@ -36,6 +36,7 @@ type Channel struct {
 	TeamRoleID       string     `yaml:"team_role_id"`
 	TaggingEmojiId   string     `yaml:"tagging_emoji_id"`
 	TaggingEmojiName string     `yaml:"tagging_emoji_name"`
+	PickDay          string     `yaml:"pick_day"` // day of week this squad's polls are posted, e.g. "wednesday"
 	Polls            []Poll     `yaml:"polls"`
 	Schedules        []Schedule `yaml:"schedules"`
 }

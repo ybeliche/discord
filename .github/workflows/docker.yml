@@ -3,6 +3,7 @@ name: Post Discord Event Polls
 on:
   schedule:
     - cron: "0 9 * * 3"
+    - cron: "0 9 * * 4"
   workflow_dispatch:
 
 jobs:

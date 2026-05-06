@@ -6,6 +6,7 @@ channels:
     team_role_id: "1391896118333276242"
     tagging_emoji_id: "1436992023470149634"
     tagging_emoji_name: "Infantry_enlisted"
+    pick_day: wednesday
     schedules:
       - poll: friday_event
         channel_id: "1391892746855383124"
@@ -71,6 +72,7 @@ channels:
     team_role_id: "1442160755834224691"
     tagging_emoji_id: "1442258138920124466"
     tagging_emoji_name: "Infantry_Badge"
+    pick_day: thursday
     schedules:
       - poll: friday_event
         channel_id: "1442154882646933563"
