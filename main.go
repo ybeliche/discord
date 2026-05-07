@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/signal"
 	"strings"
+	"sync"
 	"syscall"
 	"time"
 
@@ -54,12 +55,21 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 
 	today := strings.ToLower(time.Now().In(loc).Weekday().String())
 
+	type postResult struct {
+		poll      string
+		channelID string
+		err       error
+	}
+
 	for id, ch := range cfg.Channels {
 		if ch.PickDay != "" && strings.ToLower(ch.PickDay) != today {
 			log.Printf("Action: skipping channel %s (pick_day=%s, today=%s)", id, ch.PickDay, today)
 			continue
 		}
-		postedChannels := map[string]bool{}
+
+		var wg sync.WaitGroup
+		results := make(chan postResult, len(ch.Schedules))
+
 		for _, sched := range ch.Schedules {
 			if sched.ChannelID == "" {
 				log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
@@ -77,22 +87,43 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 			}
 			title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
 			log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
-			if err := poll.Post(s, sched.ChannelID, title, &p); err != nil {
-				log.Printf("Action: failed to post %q: %v", sched.Poll, err)
-				continue
+
+			wg.Add(1)
+			go func(sched config.Schedule, p config.Poll, title string) {
+				defer wg.Done()
+				results <- postResult{sched.Poll, sched.ChannelID,
+					poll.Post(s, sched.ChannelID, title, &p)}
+			}(sched, p, title)
+		}
+
+		wg.Wait()
+		close(results)
+
+		postedChannels := map[string]bool{}
+		for r := range results {
+			if r.err != nil {
+				log.Printf("Action: failed to post %q: %v", r.poll, r.err)
+			} else {
+				log.Printf("Action: posted %q successfully", r.poll)
+				postedChannels[r.channelID] = true
 			}
-			postedChannels[sched.ChannelID] = true
 		}
 
 		if ch.TeamRoleID != "" {
+			var tagWg sync.WaitGroup
+			msg := fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**  <:%s:%s>", ch.TeamRoleID, ch.TaggingEmojiName, ch.TaggingEmojiId)
 			for channelID := range postedChannels {
-				msg := fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**  <:%s:%s>", ch.TeamRoleID, ch.TaggingEmojiName, ch.TaggingEmojiId)
-				if _, err := s.ChannelMessageSend(channelID, msg); err != nil {
-					log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
-				} else {
-					log.Printf("Action: team tagged in channel %s", channelID)
-				}
+				tagWg.Add(1)
+				go func(channelID string) {
+					defer tagWg.Done()
+					if _, err := s.ChannelMessageSend(channelID, msg); err != nil {
+						log.Printf("Action: failed to tag team in channel %s: %v", channelID, err)
+					} else {
+						log.Printf("Action: team tagged in channel %s", channelID)
+					}
+				}(channelID)
 			}
+			tagWg.Wait()
 		}
 	}
 
