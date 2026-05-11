@@ -23,7 +23,7 @@ channels:
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
-      - poll: sunday_event
+      - poll: picket_patrole
         channel_id: "1391892746855383124"
         title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
         day: sunday
@@ -71,8 +71,8 @@ channels:
           - text: "Не иду"
             emoji_name: "Stidno"
             emoji_id: "1431203945346498671"
-      - name: sunday_event
-        label: "Воскресный ивент"
+      - name: picket_patrole
+        label: "Пикет патруль"
         duration_hours: 48
         allow_multiselect: false
         answers:
@@ -108,7 +108,7 @@ channels:
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
-      - poll: sunday_event
+      - poll: picket_patrole
         channel_id: "1442154882646933563"
         title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
         day: sunday
@@ -156,9 +156,8 @@ channels:
           - text: "Не иду"
             emoji_name: "Popali"
             emoji_id: "1491364365390057573"
-
-      - name: sunday_event
-        label: "Воскресный ивент"
+      - name: picket_patrole
+        label: "Пикет патруль"
         duration_hours: 72
         allow_multiselect: false
         answers:
