@@ -23,11 +23,11 @@ channels:
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
-      - poll: picket_patrole
-        channel_id: "1356267150112981212"
-        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
-        day: sunday
-        at: "20:00"
+#      - poll: picket_patrole
+#        channel_id: "1356267150112981212"
+#        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
+#        day: sunday
+#        at: "20:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -35,56 +35,47 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "nekocatgun"
-            emoji_id: "1452231780164702283"
-          - text: "Опоздаю"
-            emoji_name: "catlyingonfloor"
-            emoji_id: "1452231567228407840"
+            emoji_name: "white_check_mark"
+            emoji_id: ""
           - text: "Не иду"
-            emoji_name: "cattoshyblush"
-            emoji_id: "1452231655942258712"
+            emoji_name: "x"
+            emoji_id: ""
       - name: saturday_event
         label: "Субботний ивент"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "nekocatgun"
-            emoji_id: "1452231780164702283"
-          - text: "Опоздаю"
-            emoji_name: "catlyingonfloor"
-            emoji_id: "1452231567228407840"
+            emoji_name: "white_check_mark"
+            emoji_id: ""
           - text: "Не иду"
-            emoji_name: "cattoshyblush"
-            emoji_id: "1452231655942258712"
+            emoji_name: "x"
+            emoji_id: ""
       - name: training
         label: "Полковая тренировка"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "BOBROFANTERIA"
-            emoji_id: "1451138942135959574"
-          - text: "Опоздаю"
-            emoji_name: "catlyingonfloor"
-            emoji_id: "1452231567228407840"
+            emoji_name: "white_check_mark"
+            emoji_id: ""
           - text: "Не иду"
-            emoji_name: "cattoshyblush"
-            emoji_id: "1452231655942258712"
-      - name: picket_patrole
-        label: "Пикет патруль"
-        duration_hours: 72
-        allow_multiselect: false
-        answers:
-          - text: "Иду"
-            emoji_name: "BOBROFANTERIA"
-            emoji_id: "1451138942135959574"
-          - text: "Опоздаю"
-            emoji_name: "catlyingonfloor"
-            emoji_id: "1452231567228407840"
-          - text: "Не иду"
-            emoji_name: "cattoshyblush"
-            emoji_id: "1452231655942258712"
+            emoji_name: "x"
+            emoji_id: ""
+#      - name: picket_patrole
+#        label: "Пикет патруль"
+#        duration_hours: 72
+#        allow_multiselect: false
+#        answers:
+#          - text: "Иду"
+#            emoji_name: "BOBROFANTERIA"
+#            emoji_id: "1451138942135959574"
+#          - text: "Опоздаю"
+#            emoji_name: "catlyingonfloor"
+#            emoji_id: "1452231567228407840"
+#          - text: "Не иду"
+#            emoji_name: "cattoshyblush"
+#            emoji_id: "1452231655942258712"
   second_squad:
     team_guild_id: "1391892744934527006"
     team_role_id: "1391896118333276242"
@@ -107,11 +98,11 @@ channels:
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
-      - poll: picket_patrole
-        channel_id: "1391892746855383124"
-        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
-        day: sunday
-        at: "20:00"
+#      - poll: picket_patrole
+#        channel_id: "1391892746855383124"
+#        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
+#        day: sunday
+#        at: "20:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -155,20 +146,20 @@ channels:
           - text: "Не иду"
             emoji_name: "Stidno"
             emoji_id: "1431203945346498671"
-      - name: picket_patrole
-        label: "Пикет патруль"
-        duration_hours: 72
-        allow_multiselect: false
-        answers:
-          - text: "Иду"
-            emoji_name: "Mobile_Cadets"
-            emoji_id: "1430158546590240768"
-          - text: "Опоздаю"
-            emoji_name: "Wojak_sorrows"
-            emoji_id: "1430805290818998304"
-          - text: "Не иду"
-            emoji_name: "Stidno"
-            emoji_id: "1431203945346498671"
+#      - name: picket_patrole
+#        label: "Пикет патруль"
+#        duration_hours: 72
+#        allow_multiselect: false
+#        answers:
+#          - text: "Иду"
+#            emoji_name: "Mobile_Cadets"
+#            emoji_id: "1430158546590240768"
+#          - text: "Опоздаю"
+#            emoji_name: "Wojak_sorrows"
+#            emoji_id: "1430805290818998304"
+#          - text: "Не иду"
+#            emoji_name: "Stidno"
+#            emoji_id: "1431203945346498671"
 
   third_squad:
     team_guild_id: "1442154882260795435"
@@ -192,11 +183,11 @@ channels:
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
-      - poll: picket_patrole
-        channel_id: "1442154882646933563"
-        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
-        day: sunday
-        at: "20:00"
+#      - poll: picket_patrole
+#        channel_id: "1442154882646933563"
+#        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
+#        day: sunday
+#        at: "20:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -240,17 +231,17 @@ channels:
           - text: "Не иду"
             emoji_name: "Popali"
             emoji_id: "1491364365390057573"
-      - name: picket_patrole
-        label: "Пикет патруль"
-        duration_hours: 72
-        allow_multiselect: false
-        answers:
-          - text: "Иду"
-            emoji_name: "CHAAAAAAAAAARRRGE"
-            emoji_id: "1442847287075278991"
-          - text: "Опоздаю"
-            emoji_name: "Salli_Nasvaenko"
-            emoji_id: "1495856747590586462"
-          - text: "Не иду"
-            emoji_name: "Popali"
-            emoji_id: "1491364365390057573"
+#      - name: picket_patrole
+#        label: "Пикет патруль"
+#        duration_hours: 72
+#        allow_multiselect: false
+#        answers:
+#          - text: "Иду"
+#            emoji_name: "CHAAAAAAAAAARRRGE"
+#            emoji_id: "1442847287075278991"
+#          - text: "Опоздаю"
+#            emoji_name: "Salli_Nasvaenko"
+#            emoji_id: "1495856747590586462"
+#          - text: "Не иду"
+#            emoji_name: "Popali"
+#            emoji_id: "1491364365390057573"

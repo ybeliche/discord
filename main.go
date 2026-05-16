@@ -11,39 +11,75 @@ import (
 	"time"
 
 	"github.com/bwmarrin/discordgo"
+	"github.com/spf13/cobra"
 	"github.com/ybeliche/discord/config"
 	"github.com/ybeliche/discord/internal/commands"
 	"github.com/ybeliche/discord/internal/poll"
 	"github.com/ybeliche/discord/internal/scheduler"
 )
 
-func main() {
+func newSession() *discordgo.Session {
 	token := os.Getenv("DISCORD_TOKEN")
 	if token == "" {
 		log.Fatal("DISCORD_TOKEN env var not set")
 	}
-	cfg, err := config.Load("config/config.yaml")
-	if err != nil {
-		log.Fatalf("Failed to load config: %v", err)
-	}
-
 	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
 		log.Fatal(err)
 	}
 	dg.Identify.Intents = discordgo.IntentsGuilds | discordgo.IntentsGuildMessages
-
 	if err = dg.Open(); err != nil {
 		log.Fatal(err)
 	}
-	defer dg.Close()
+	return dg
+}
 
-	if os.Getenv("GITHUB_ACTIONS") == "true" {
-		runActionMode(dg, cfg)
-		return
+func main() {
+	var channelID, messageID string
+
+	rootCmd := &cobra.Command{
+		Use:   "alabama",
+		Short: "Alabama Discord bot",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			dg := newSession()
+			defer dg.Close()
+
+			cfg, err := config.Load("config/config.yaml")
+			if err != nil {
+				return fmt.Errorf("failed to load config: %w", err)
+			}
+
+			if os.Getenv("GITHUB_ACTIONS") == "true" {
+				runActionMode(dg, cfg)
+				return nil
+			}
+
+			runBotMode(dg, cfg)
+			return nil
+		},
 	}
 
-	runBotMode(dg, cfg)
+	deleteCmd := &cobra.Command{
+		Use:   "delete",
+		Short: "Delete a Discord message by ID",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			if channelID == "" || messageID == "" {
+				return fmt.Errorf("--channel and --message are required")
+			}
+			dg := newSession()
+			defer dg.Close()
+			return runDeleteMode(dg, channelID, messageID)
+		},
+	}
+
+	deleteCmd.Flags().StringVar(&channelID, "channel", "", "Discord channel ID")
+	deleteCmd.Flags().StringVar(&messageID, "message", "", "Discord message ID to delete")
+
+	rootCmd.AddCommand(deleteCmd)
+
+	if err := rootCmd.Execute(); err != nil {
+		os.Exit(1)
+	}
 }
 
 func runActionMode(s *discordgo.Session, cfg *config.Config) {
@@ -128,6 +164,14 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 	}
 
 	log.Println("Action: done.")
+}
+
+func runDeleteMode(s *discordgo.Session, channelID, messageID string) error {
+	if err := s.ChannelMessageDelete(channelID, messageID); err != nil {
+		return fmt.Errorf("failed to delete message %s: %w", messageID, err)
+	}
+	log.Printf("Deleted message %s from channel %s", messageID, channelID)
+	return nil
 }
 
 func runBotMode(s *discordgo.Session, cfg *config.Config) {
