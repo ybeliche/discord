@@ -6,7 +6,7 @@ channels:
     team_role_id: "1255696114565251173"
     tagging_emoji_id: "1451139283955224576"
     tagging_emoji_name: "Confederate_Flag"
-    pick_day: thursday
+    pick_day: saturday
     schedules:
       - poll: friday_event
         channel_id: "1356267150112981212"
@@ -35,27 +35,27 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "white_check_mark"
+            emoji: "✅"
           - text: "Не иду"
-            emoji: "x"
+            emoji: "❌"
       - name: saturday_event
         label: "Субботний ивент"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "white_check_mark"
+            emoji: "✅"
           - text: "Не иду"
-            emoji: "x"
+            emoji: "❌"
       - name: training
         label: "Полковая тренировка"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "white_check_mark"
+            emoji: "✅"
           - text: "Не иду"
-            emoji: "x"
+            emoji: "❌"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
