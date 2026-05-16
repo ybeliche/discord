@@ -47,15 +47,15 @@ channels:
             emoji: "✅"
           - text: "Не иду"
             emoji: "❌"
-      - name: training
-        label: "Полковая тренировка"
-        duration_hours: 72
-        allow_multiselect: false
-        answers:
-          - text: "Иду"
-            emoji: "✅"
-          - text: "Не иду"
-            emoji: "❌"
+#      - name: training
+#        label: "Полковая тренировка"
+#        duration_hours: 72
+#        allow_multiselect: false
+#        answers:
+#          - text: "Иду"
+#            emoji: "✅"
+#          - text: "Не иду"
+#            emoji: "❌"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
