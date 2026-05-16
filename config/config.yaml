@@ -77,8 +77,8 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "Mobile_Cadets"
-            emoji_id: "1430158546590240768"
+            emoji_name: "BOBROFANTERIA"
+            emoji_id: "1451138942135959574"
           - text: "Опоздаю"
             emoji_name: "catlyingonfloor"
             emoji_id: "1452231567228407840"
