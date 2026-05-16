@@ -1,6 +1,90 @@
 timezone: "Europe/Moscow"
 
 channels:
+  first_squad:
+    team_guild_id: "1255670937928339557"
+    team_role_id: "1255696114565251173"
+    tagging_emoji_id: "1451139283955224576"
+    tagging_emoji_name: "Confederate_Flag"
+    pick_day: saturday
+    schedules:
+      - poll: friday_event
+        channel_id: "1356267150112981212"
+        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+        day: friday
+        at: "22:00"
+      - poll: training
+        channel_id: "1356267150112981212"
+        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        day: saturday
+        at: "21:00"
+      - poll: saturday_event
+        channel_id: "1356267150112981212"
+        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
+      - poll: picket_patrole
+        channel_id: "1356267150112981212"
+        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
+        day: sunday
+        at: "20:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "nekocatgun"
+            emoji_id: "1452231780164702283"
+          - text: "Опоздаю"
+            emoji_name: "catlyingonfloor"
+            emoji_id: "1452231567228407840"
+          - text: "Не иду"
+            emoji_name: "cattoshyblush"
+            emoji_id: "1452231655942258712"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "nekocatgun"
+            emoji_id: "1452231780164702283"
+          - text: "Опоздаю"
+            emoji_name: "catlyingonfloor"
+            emoji_id: "1452231567228407840"
+          - text: "Не иду"
+            emoji_name: "cattoshyblush"
+            emoji_id: "1452231655942258712"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "BOBROFANTERIA"
+            emoji_id: "1451138942135959574"
+          - text: "Опоздаю"
+            emoji_name: "catlyingonfloor"
+            emoji_id: "1452231567228407840"
+          - text: "Не иду"
+            emoji_name: "cattoshyblush"
+            emoji_id: "1452231655942258712"
+      - name: picket_patrole
+        label: "Пикет патруль"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "Mobile_Cadets"
+            emoji_id: "1430158546590240768"
+          - text: "Опоздаю"
+            emoji_name: "catlyingonfloor"
+            emoji_id: "1452231567228407840"
+          - text: "Не иду"
+            emoji_name: "cattoshyblush"
+            emoji_id: "1452231655942258712"
   second_squad:
     team_guild_id: "1391892744934527006"
     team_role_id: "1391896118333276242"
