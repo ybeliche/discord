@@ -35,33 +35,27 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "white_check_mark"
-            emoji_id: ""
+            emoji: "white_check_mark"
           - text: "Не иду"
-            emoji_name: "x"
-            emoji_id: ""
+            emoji: "x"
       - name: saturday_event
         label: "Субботний ивент"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "white_check_mark"
-            emoji_id: ""
+            emoji: "white_check_mark"
           - text: "Не иду"
-            emoji_name: "x"
-            emoji_id: ""
+            emoji: "x"
       - name: training
         label: "Полковая тренировка"
         duration_hours: 72
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "white_check_mark"
-            emoji_id: ""
+            emoji: "white_check_mark"
           - text: "Не иду"
-            emoji_name: "x"
-            emoji_id: ""
+            emoji: "x"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
