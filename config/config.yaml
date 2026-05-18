@@ -239,3 +239,50 @@ channels:
 #          - text: "Не иду"
 #            emoji_name: "Popali"
 #            emoji_id: "1491364365390057573"
+
+  fourth_squad:
+    team_guild_id: "1348333465619267584" 
+    team_role_id: "1398245739733192714" 
+    pick_day: monday
+    schedules:
+      - poll: friday_event
+        channel_id: "1353485917481992202"
+        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+        day: friday
+        at: "22:00"
+      - poll: training
+        channel_id: "1353485917481992202"
+        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        day: saturday
+        at: "21:00"
+      - poll: saturday_event
+        channel_id: "1353485917481992202"
+        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"   
+          - text: "Опоздаю"    
+          - text: "Не иду"    
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+          - text: "Опоздаю"
+          - text: "Не иду"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+          - text: "Опоздаю" 
+          - text: "Не иду"
+          
