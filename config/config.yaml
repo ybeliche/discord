@@ -15,7 +15,7 @@ channels:
         at: "22:00"
       - poll: training
         channel_id: "1356267150112981212"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        title: "Батальонная тренировка перед Ивентом ({date}) в 21:00 по МСК!"
         day: saturday
         at: "21:00"
       - poll: saturday_event
@@ -84,7 +84,7 @@ channels:
         at: "22:00"
       - poll: training
         channel_id: "1391892746855383124"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        title: "Батальонная тренировка перед Ивентом ({date}) в 21:00 по МСК!"
         day: saturday
         at: "21:00"
       - poll: saturday_event
@@ -169,7 +169,7 @@ channels:
         at: "22:00"
       - poll: training
         channel_id: "1442154882646933563"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        title: "Батальонная тренировка перед Ивентом ({date}) в 21:00 по МСК!"
         day: saturday
         at: "21:00"
       - poll: saturday_event
@@ -243,7 +243,7 @@ channels:
   fourth_squad:
     team_guild_id: "1348333465619267584" 
     team_role_id: "1398245739733192714" 
-    pick_day: thursday
+    pick_day: wednesday
     schedules:
       - poll: friday_event
         channel_id: "1353485917481992202"
@@ -252,7 +252,7 @@ channels:
         at: "22:00"
       - poll: training
         channel_id: "1353485917481992202"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+        title: "Батальонная тренировка перед Ивентом ({date}) в 21:00 по МСК!"
         day: saturday
         at: "21:00"
       - poll: saturday_event
