@@ -243,7 +243,7 @@ channels:
   fourth_squad:
     team_guild_id: "1348333465619267584" 
     team_role_id: "1398245739733192714" 
-    pick_day: monday
+    pick_day: thursday
     schedules:
       - poll: friday_event
         channel_id: "1353485917481992202"
@@ -285,4 +285,3 @@ channels:
           - text: "Иду"
           - text: "Опоздаю" 
           - text: "Не иду"
-          
