@@ -283,4 +283,6 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
+          - text: "Опоздаю" 
           - text: "Не иду"
+          
