@@ -20,7 +20,7 @@ channels:
         at: "21:00"
       - poll: saturday_event
         channel_id: "1356267150112981212"
-        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Субботний батальонный ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
 #      - poll: picket_patrole
@@ -89,7 +89,7 @@ channels:
         at: "21:00"
       - poll: saturday_event
         channel_id: "1391892746855383124"
-        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Субботний батальонный ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
 #      - poll: picket_patrole
@@ -174,7 +174,7 @@ channels:
         at: "21:00"
       - poll: saturday_event
         channel_id: "1442154882646933563"
-        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Субботний батальонный ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
 #      - poll: picket_patrole
@@ -257,7 +257,7 @@ channels:
         at: "21:00"
       - poll: saturday_event
         channel_id: "1353485917481992202"
-        title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Субботний батальонный ивент ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
     polls:
