@@ -13,21 +13,26 @@ channels:
         title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
         day: friday
         at: "22:00"
-      - poll: training
-        channel_id: "1356267150112981212"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-        day: saturday
-        at: "21:00"
-      - poll: saturday_event
-        channel_id: "1356267150112981212"
-        title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+      # - poll: training
+      #   channel_id: "1356267150112981212"
+      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+      #   day: saturday
+      #   at: "21:00"
+      # - poll: saturday_event
+      #   channel_id: "1356267150112981212"
+      #   title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+      #   day: saturday
+      #   at: "22:00"
 #      - poll: picket_patrole
 #        channel_id: "1356267150112981212"
 #        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
 #        day: sunday
 #        at: "20:00"
+      - poll: battle_event
+        channel_id: "1356267150112981212"
+        title: "Ивент-Реконструкция Американской Революции ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -56,6 +61,15 @@ channels:
 #            emoji: "✅"
 #          - text: "Не иду"
 #            emoji: "❌"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Не иду"
+            emoji: "❌"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
@@ -82,21 +96,26 @@ channels:
         title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
         day: friday
         at: "22:00"
-      - poll: training
-        channel_id: "1391892746855383124"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-        day: saturday
-        at: "21:00"
-      - poll: saturday_event
-        channel_id: "1391892746855383124"
-        title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+      # - poll: training
+      #   channel_id: "1391892746855383124"
+      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+      #   day: saturday
+      #   at: "21:00"
+      # - poll: saturday_event
+      #   channel_id: "1391892746855383124"
+      #   title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+      #   day: saturday
+      #   at: "22:00"
 #      - poll: picket_patrole
 #        channel_id: "1391892746855383124"
 #        title: "Полковой Пикет-Патруль ({date}) UEC в 20:00 по МСК!"
 #        day: sunday
 #        at: "20:00"
+      - poll: battle_event
+        channel_id: "1391892746855383124"
+        title: "Ивент-Реконструкция Американской Революции ({date}) UEC в 22:00 по МСК!"
+        day: saturday
+        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -140,6 +159,20 @@ channels:
           - text: "Не иду"
             emoji_name: "Stidno"
             emoji_id: "1431203945346498671"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+           emoji_name: "Mobile_Cadets"
+           emoji_id: "1430158546590240768"
+         - text: "Опоздаю"
+           emoji_name: "Wojak_sorrows"
+           emoji_id: "1430805290818998304"
+         - text: "Не иду"
+           emoji_name: "Stidno"
+           emoji_id: "1431203945346498671"            
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
@@ -167,14 +200,19 @@ channels:
         title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
         day: friday
         at: "22:00"
-      - poll: training
+      # - poll: training
+      #   channel_id: "1442154882646933563"
+      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+      #   day: saturday
+      #   at: "21:00"
+      # - poll: saturday_event
+      #   channel_id: "1442154882646933563"
+      #   title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+      #   day: saturday
+      #   at: "22:00"
+      - poll: battle_event
         channel_id: "1442154882646933563"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-        day: saturday
-        at: "21:00"
-      - poll: saturday_event
-        channel_id: "1442154882646933563"
-        title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Ивент-Реконструкция Американской Революции ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
 #      - poll: picket_patrole
@@ -225,6 +263,20 @@ channels:
           - text: "Не иду"
             emoji_name: "Popali"
             emoji_id: "1491364365390057573"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji_name: "CHAAAAAAAAAARRRGE"
+            emoji_id: "1442847287075278991"
+          - text: "Опоздаю"
+            emoji_name: "Salli_Nasvaenko"
+            emoji_id: "1495856747590586462"
+          - text: "Не иду"
+            emoji_name: "Popali"
+            emoji_id: "1491364365390057573"     
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
@@ -250,14 +302,19 @@ channels:
         title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
         day: friday
         at: "22:00"
-      - poll: training
+      # - poll: training
+      #   channel_id: "1353485917481992202"
+      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+      #   day: saturday
+      #   at: "21:00"
+      # - poll: saturday_event
+      #   channel_id: "1353485917481992202"
+      #   title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+      #   day: saturday
+      #   at: "22:00"
+      - poll: battle_event
         channel_id: "1353485917481992202"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-        day: saturday
-        at: "21:00"
-      - poll: saturday_event
-        channel_id: "1353485917481992202"
-        title: "Субботний полковой ивент ({date}) UEC в 22:00 по МСК!"
+        title: "Ивент-Реконструкция Американской Революции ({date}) UEC в 22:00 по МСК!"
         day: saturday
         at: "22:00"
     polls:
@@ -284,4 +341,12 @@ channels:
         answers:
           - text: "Иду"
           - text: "Опоздаю" 
+          - text: "Не иду"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+          - text: "Опоздаю"
           - text: "Не иду"
