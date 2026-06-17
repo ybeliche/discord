@@ -164,7 +164,7 @@ channels:
         duration_hours: 72
         allow_multiselect: false
         answers:
-        - text: "Иду"
+         - text: "Иду"
            emoji_name: "Mobile_Cadets"
            emoji_id: "1430158546590240768"
          - text: "Опоздаю"
