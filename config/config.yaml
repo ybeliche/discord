@@ -13,11 +13,11 @@ channels:
         title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
         day: friday
         at: "22:00"
-      - poll: training
-        channel_id: "1356267150112981212"
-        title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-        day: saturday
-        at: "21:00"
+      # - poll: training
+      #   channel_id: "1356267150112981212"
+      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+      #   day: saturday
+      #   at: "21:00"
       - poll: saturday_event
         channel_id: "1356267150112981212"
         title: "Субботний ивент ({date}) UEC в 22:00 по МСК!"
