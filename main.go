@@ -18,6 +18,16 @@ import (
 	"github.com/ybeliche/discord/internal/scheduler"
 )
 
+var DayOfWeek = map[string]string{
+	"Sunday":    "Воскресенье",
+	"Monday":    "Понедельник",
+	"Tuesday":   "Вторник",
+	"Wednesday": "Среда",
+	"Thursday":  "Четверг",
+	"Friday":    "Пятница",
+	"Saturday":  "Суббота",
+}
+
 func newSession() *discordgo.Session {
 	token := os.Getenv("DISCORD_TOKEN")
 	if token == "" {
@@ -122,6 +132,7 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 				continue
 			}
 			title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
+			title = strings.ReplaceAll(title, "{day}", DayOfWeek[next.Weekday().String()])
 			log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
 
 			wg.Add(1)
