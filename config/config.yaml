@@ -97,6 +97,7 @@ channels:
   #          - text: "Не иду"
   #            emoji_name: "cattoshyblush"
   #            emoji_id: "1452231655942258712"
+
   second_squad_cavalry:
     team_guild_id: "1528519232005079091"
     team_role_id: "1528519232013205520"
@@ -193,6 +194,7 @@ channels:
     #          - text: "Не иду"
     #            emoji_name: "cattoshyblush"
     #            emoji_id: "1452231655942258712"
+
   first_squad:
     team_guild_id: "1255670937928339557"
     team_role_id: "1255696114565251173"
@@ -281,6 +283,7 @@ channels:
 #          - text: "Не иду"
 #            emoji_name: "cattoshyblush"
 #            emoji_id: "1452231655942258712"
+
   second_squad:
     team_guild_id: "1391892744934527006"
     team_role_id: "1391896118333276242"
