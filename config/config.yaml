@@ -79,6 +79,8 @@ channels:
         answers:
           - text: "Иду"
             emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
   #      - name: picket_patrole
