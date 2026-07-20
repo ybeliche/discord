@@ -9,32 +9,32 @@ channels:
     pick_day: monday
     schedules:
       #      - poll: friday_event
-      #        channel_id: "1356267150112981212"
+      #        channel_id: "1528518856644100130"
       #        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
       #        day: friday
       #        at: "22:00"
       # - poll: training
-      #   channel_id: "1356267150112981212"
+      #   channel_id: "1528518856644100130"
       #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
       #   day: saturday
       #   at: "21:00"
       #      - poll: saturday_event
-      #        channel_id: "1356267150112981212"
+      #        channel_id: "1528518856644100130"
       #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
       #        day: saturday
       #        at: "22:00"
       #      - poll: picket_patrole
-      #        channel_id: "1356267150112981212"
+      #        channel_id: "1528518856644100130"
       #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
       #        day: sunday
       #        at: "20:00"
 #      - poll: battle_event
-#        channel_id: "1356267150112981212"
+#        channel_id: "1528518856644100130"
 #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
 #        day: friday
 #        at: "22:00"
       - poll: battle_event
-        channel_id: "1356267150112981212"
+        channel_id: "1528518856644100130"
         title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
         day: saturday
         at: "22:00"
