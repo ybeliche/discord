@@ -548,8 +548,8 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "LA_TIGERZOUAVEBALL"
-            emoji_id: "1491383720735805480"
+            emoji_name: "Wojak_seen"
+            emoji_id: "1491365429233320056"
           - text: "Опоздаю"
             emoji_name: "Stydno"
             emoji_id: "1491366262121435176"
@@ -562,8 +562,8 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "LA_TIGERZOUAVEBALL"
-            emoji_id: "1491383720735805480"
+            emoji_name: "Pravoslavnenko_2"
+            emoji_id: "1491365889272975380"
           - text: "Опоздаю"
             emoji_name: "Stydno"
             emoji_id: "1491366262121435176"
@@ -580,10 +580,10 @@ channels:
             emoji_id: "1442847287075278991"
           - text: "Опоздаю"
             emoji_name: "Salli_Nasvaenko"
-            emoji_id: "1495856747590586462"
+            emoji_id: "1529239983632683098"
           - text: "Не иду"
-            emoji_name: "Popali"
-            emoji_id: "1491364365390057573"
+            emoji_name: "Busya"
+            emoji_id: "1442280732948037642"
       - name: battle_event
         label: "Ивент-Реконструкция"
         duration_hours: 72
@@ -594,10 +594,10 @@ channels:
             emoji_id: "1442847287075278991"
           - text: "Опоздаю"
             emoji_name: "Salli_Nasvaenko"
-            emoji_id: "1495856747590586462"
+            emoji_id: "1529239983632683098"
           - text: "Не иду"
-            emoji_name: "Popali"
-            emoji_id: "1491364365390057573"     
+            emoji_name: "Busya"
+            emoji_id: "1442280732948037642"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 72
@@ -608,10 +608,10 @@ channels:
 #            emoji_id: "1442847287075278991"
 #          - text: "Опоздаю"
 #            emoji_name: "Salli_Nasvaenko"
-#            emoji_id: "1495856747590586462"
+#            emoji_id: "1529239983632683098"
 #          - text: "Не иду"
-#            emoji_name: "Popali"
-#            emoji_id: "1491364365390057573"
+#            emoji_name: "Busya"
+#            emoji_id: "1442280732948037642"
 
   fourth_squad_company_a:
     team_guild_id: "1348333465619267584" 
