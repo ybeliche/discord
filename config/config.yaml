@@ -683,6 +683,8 @@ channels:
   fourth_squad_company_g:
     team_guild_id: "1528480892958281748"
     team_role_id: "1528480892958281754"
+    tagging_emoji_id: "1529231695587578038"
+    tagging_emoji_name: "private"
     pick_day: tuesday
     main_schedule:
       enabled: true
