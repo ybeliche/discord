@@ -297,7 +297,7 @@ channels:
     #            emoji_name: "cattoshyblush"
     #            emoji_id: "1452231655942258712"
 
-  first_squad:
+  first_squad_company_a:
     team_guild_id: "1255670937928339557"
     team_role_id: "1255696114565251173"
     tagging_emoji_id: "1451139283955224576"
@@ -389,7 +389,7 @@ channels:
 #            emoji_name: "cattoshyblush"
 #            emoji_id: "1452231655942258712"
 
-  second_squad:
+  second_squad_company_a:
     team_guild_id: "1391892744934527006"
     team_role_id: "1391896118333276242"
     tagging_emoji_id: "1436992023470149634"
@@ -501,7 +501,7 @@ channels:
 #            emoji_name: "Stidno"
 #            emoji_id: "1431203945346498671"
 
-  third_squad:
+  third_squad_company_a:
     team_guild_id: "1442154882260795435"
     team_role_id: "1442160755834224691"
     tagging_emoji_id: "1442258138920124466"
@@ -613,7 +613,7 @@ channels:
 #            emoji_name: "Popali"
 #            emoji_id: "1491364365390057573"
 
-  fourth_squad:
+  fourth_squad_company_a:
     team_guild_id: "1348333465619267584" 
     team_role_id: "1398245739733192714" 
     pick_day: wednesday
@@ -679,3 +679,82 @@ channels:
           - text: "Иду"
           - text: "Опоздаю"
           - text: "Не иду"
+
+  fourth_squad_company_g:
+    team_guild_id: "1528480892958281748"
+    team_role_id: "1528480892958281754"
+    pick_day: tuesday
+    main_schedule:
+      enabled: true
+      channel_id: "1528480893528707215"
+    schedules:
+    #      - poll: friday_event
+    #        channel_id: "1528480893528707215"
+    #        title: "Пятничный ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: training
+    #        channel_id: "1528480893528707215"
+    #        title: "Полковые маневры перед Ивентом ({day}-{date}) в 20:30 по МСК!"
+    #        day: saturday
+    #        at: "21:00"
+    #      - poll: saturday_event
+    #        channel_id: "1528480893528707215"
+    #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1528480893528707215"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1528480893528707215"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
