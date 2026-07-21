@@ -19,13 +19,13 @@ import (
 )
 
 var DayOfWeek = map[string]string{
-	"Sunday":    "Воскресенье",
-	"Monday":    "Понедельник",
-	"Tuesday":   "Вторник",
-	"Wednesday": "Среда",
-	"Thursday":  "Четверг",
-	"Friday":    "Пятница",
-	"Saturday":  "Суббота",
+	"SUNDAY":    "Воскресенье",
+	"MONDAY":    "Понедельник",
+	"TUESDAY":   "Вторник",
+	"WEDNESDAY": "Среда",
+	"THURSDAY":  "Четверг",
+	"FRIDAY":    "Пятница",
+	"SATURDAY":  "Суббота",
 }
 
 func newSession() *discordgo.Session {
@@ -113,11 +113,28 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 			continue
 		}
 
-		var wg sync.WaitGroup
-		results := make(chan postResult, len(ch.Schedules))
+		// When main_schedule is enabled, the channel ignores its own schedules
+		// and posts the global cfg.Schedules to its main_schedule.channel_id.
+		iterSchedules := ch.Schedules
+		if ch.MainSchedule.Enabled {
+			log.Printf("Action: main schedule enabled for channel %s → posting to %s", id, ch.MainSchedule.ChannelID)
+			iterSchedules = make([]config.Schedule, 0, len(cfg.Schedules))
+			for _, rs := range cfg.Schedules {
+				iterSchedules = append(iterSchedules, config.Schedule{
+					Poll:      rs.Poll,
+					ChannelID: ch.MainSchedule.ChannelID,
+					Title:     rs.Title,
+					Day:       rs.Day,
+					At:        rs.At,
+				})
+			}
+		}
 
-		for _, sched := range ch.Schedules {
-			if sched.ChannelID == "" {
+		var wg sync.WaitGroup
+		results := make(chan postResult, len(iterSchedules))
+
+		for _, sched := range iterSchedules {
+			if sched.ChannelID == "" && ch.MainSchedule.ChannelID == "" {
 				log.Printf("Action: skipping %q — channel_id not set", sched.Poll)
 				continue
 			}
@@ -132,7 +149,7 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 				continue
 			}
 			title := strings.ReplaceAll(sched.Title, "{date}", next.Format("02.01"))
-			title = strings.ReplaceAll(title, "{day}", DayOfWeek[next.Weekday().String()])
+			title = strings.ReplaceAll(title, "{day}", DayOfWeek[strings.ToUpper(sched.Day)])
 			log.Printf("Action: posting %q → %s (channel %s)", sched.Poll, title, sched.ChannelID)
 
 			wg.Add(1)

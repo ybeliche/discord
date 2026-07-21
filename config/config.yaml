@@ -1,43 +1,142 @@
 timezone: "Europe/Moscow"
 
+schedules:
+  - poll: battle_event
+    title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    day: friday
+    at: "22:00"
+  - poll: battle_event
+    title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    day: saturday
+    at: "22:00"
+
 channels:
+  test_squad:
+    team_guild_id: "1495891095110947038"
+    team_role_id: "1501262547423072307"
+    tagging_emoji_id: ""
+    tagging_emoji_name: ""
+    pick_day: tuesday
+    main_schedule:
+      enabled: true
+      channel_id: "1501254034261020813"
+    schedules:
+    #      - poll: friday_event
+    #        channel_id: "1501254034261020813"
+    #        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #       - poll: training
+    #         channel_id: "1501254034261020813"
+    #         title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+    #         day: saturday
+    #         at: "21:00"
+    #      - poll: saturday_event
+    #        channel_id: "1501254034261020813"
+    #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    #      - poll: picket_patrole
+    #        channel_id: "1501254034261020813"
+    #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
+    #        day: sunday
+    #        at: "20:00"
+    #      - poll: battle_event
+    #        channel_id: "1501254034261020813"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1501254034261020813"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+
   first_squad_cavalry:
     team_guild_id: "1528518855306121236"
     team_role_id: "1528518855352123461"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
     pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1528518856644100130"
     schedules:
-      #      - poll: friday_event
-      #        channel_id: "1528518856644100130"
-      #        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
-      #        day: friday
-      #        at: "22:00"
-      # - poll: training
-      #   channel_id: "1528518856644100130"
-      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-      #   day: saturday
-      #   at: "21:00"
-      #      - poll: saturday_event
-      #        channel_id: "1528518856644100130"
-      #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
-      #        day: saturday
-      #        at: "22:00"
-      #      - poll: picket_patrole
-      #        channel_id: "1528518856644100130"
-      #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
-      #        day: sunday
-      #        at: "20:00"
-      - poll: battle_event
-        channel_id: "1528518856644100130"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1528518856644100130"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: friday_event
+#        channel_id: "1528518856644100130"
+#        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#       - poll: training
+#         channel_id: "1528518856644100130"
+#         title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+#         day: saturday
+#         at: "21:00"
+#      - poll: saturday_event
+#        channel_id: "1528518856644100130"
+#        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
+#      - poll: picket_patrole
+#        channel_id: "1528518856644100130"
+#        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
+#        day: sunday
+#        at: "20:00"
+#      - poll: battle_event
+#        channel_id: "1528518856644100130"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1528518856644100130"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -104,37 +203,40 @@ channels:
     tagging_emoji_id: ""
     tagging_emoji_name: ""
     pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1528519233871544494"
     schedules:
-      #      - poll: friday_event
-      #        channel_id: "1528519233871544494"
-      #        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
-      #        day: friday
-      #        at: "22:00"
-      # - poll: training
-      #   channel_id: "1528519233871544494"
-      #   title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
-      #   day: saturday
-      #   at: "21:00"
-      #      - poll: saturday_event
-      #        channel_id: "1528519233871544494"
-      #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
-      #        day: saturday
-      #        at: "22:00"
-      #      - poll: picket_patrole
-      #        channel_id: "1528519233871544494"
-      #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
-      #        day: sunday
-      #        at: "20:00"
-      - poll: battle_event
-        channel_id: "1528519233871544494"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1528519233871544494"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: friday_event
+#        channel_id: "1528519233871544494"
+#        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#       - poll: training
+#         channel_id: "1528519233871544494"
+#         title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
+#         day: saturday
+#         at: "21:00"
+#      - poll: saturday_event
+#        channel_id: "1528519233871544494"
+#        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
+#      - poll: picket_patrole
+#        channel_id: "1528519233871544494"
+#        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
+#        day: sunday
+#        at: "20:00"
+#      - poll: battle_event
+#        channel_id: "1528519233871544494"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1528519233871544494"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -201,17 +303,20 @@ channels:
     tagging_emoji_id: "1451139283955224576"
     tagging_emoji_name: "Confederate_Flag"
     pick_day: thursday
+    main_schedule:
+      enabled: true
+      channel_id: "1356267150112981212"
     schedules:
 #      - poll: friday_event
 #        channel_id: "1356267150112981212"
 #        title: "Пятничный ивент ({day}-{date}) UEC в 22:00 по МСК!"
 #        day: friday
 #        at: "22:00"
-      # - poll: training
-      #   channel_id: "1356267150112981212"
-      #   title: "Полковая тренировка перед Ивентом ({day}-{date}) в 21:00 по МСК!"
-      #   day: saturday
-      #   at: "21:00"
+#       - poll: training
+#         channel_id: "1356267150112981212"
+#         title: "Полковая тренировка перед Ивентом ({day}-{date}) в 21:00 по МСК!"
+#         day: saturday
+#         at: "21:00"
 #      - poll: saturday_event
 #        channel_id: "1356267150112981212"
 #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
@@ -222,16 +327,16 @@ channels:
 #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
 #        day: sunday
 #        at: "20:00"
-      - poll: battle_event
-        channel_id: "1356267150112981212"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1356267150112981212"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1356267150112981212"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1356267150112981212"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -290,6 +395,9 @@ channels:
     tagging_emoji_id: "1436992023470149634"
     tagging_emoji_name: "Infantry_enlisted"
     pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1391892746855383124"
     schedules:
 #      - poll: friday_event
 #        channel_id: "1391892746855383124"
@@ -311,16 +419,16 @@ channels:
 #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
 #        day: sunday
 #        at: "20:00"
-      - poll: battle_event
-        channel_id: "1391892746855383124"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1391892746855383124"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1391892746855383124"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1391892746855383124"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"
@@ -399,6 +507,9 @@ channels:
     tagging_emoji_id: "1442258138920124466"
     tagging_emoji_name: "Infantry_Badge"
     pick_day: thursday
+    main_schedule:
+      enabled: true
+      channel_id: "1442154882646933563"
     schedules:
 #      - poll: friday_event
 #        channel_id: "1442154882646933563"
@@ -415,16 +526,16 @@ channels:
 #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
 #        day: saturday
 #        at: "22:00"
-      - poll: battle_event
-        channel_id: "1442154882646933563"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1442154882646933563"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1442154882646933563"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1442154882646933563"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
 #      - poll: picket_patrole
 #        channel_id: "1442154882646933563"
 #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
@@ -506,6 +617,9 @@ channels:
     team_guild_id: "1348333465619267584" 
     team_role_id: "1398245739733192714" 
     pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1353485917481992202"
     schedules:
 #      - poll: friday_event
 #        channel_id: "1353485917481992202"
@@ -522,16 +636,16 @@ channels:
 #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
 #        day: saturday
 #        at: "22:00"
-      - poll: battle_event
-        channel_id: "1353485917481992202"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: friday
-        at: "22:00"
-      - poll: battle_event
-        channel_id: "1353485917481992202"
-        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-        day: saturday
-        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1353485917481992202"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: friday
+#        at: "22:00"
+#      - poll: battle_event
+#        channel_id: "1353485917481992202"
+#        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#        day: saturday
+#        at: "22:00"
     polls:
       - name: friday_event
         label: "Пятничный ивент"

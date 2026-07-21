@@ -31,19 +31,33 @@ type Schedule struct {
 	At        string `yaml:"at"`    // HH:MM in the configured timezone
 }
 
+type RootSchedule struct {
+	Poll  string `yaml:"poll"`
+	Title string `yaml:"title"` // supports {date} placeholder → DD.MM of the firing day
+	Day   string `yaml:"day"`   // monday … sunday
+	At    string `yaml:"at"`    // HH:MM in the configured timezone
+}
+
+type MainSchedule struct {
+	Enabled   bool   `yaml:"enabled"`
+	ChannelID string `yaml:"channel_id"`
+}
+
 type Channel struct {
-	GuildID          string     `yaml:"team_guild_id"`
-	TeamRoleID       string     `yaml:"team_role_id"`
-	TaggingEmojiId   string     `yaml:"tagging_emoji_id"`
-	TaggingEmojiName string     `yaml:"tagging_emoji_name"`
-	PickDay          string     `yaml:"pick_day"` // day of week this squad's polls are posted, e.g. "wednesday"
-	Polls            []Poll     `yaml:"polls"`
-	Schedules        []Schedule `yaml:"schedules"`
+	GuildID          string       `yaml:"team_guild_id"`
+	TeamRoleID       string       `yaml:"team_role_id"`
+	TaggingEmojiId   string       `yaml:"tagging_emoji_id"`
+	TaggingEmojiName string       `yaml:"tagging_emoji_name"`
+	PickDay          string       `yaml:"pick_day"` // day of week this squad's polls are posted, e.g. "wednesday"
+	MainSchedule     MainSchedule `yaml:"main_schedule"`
+	Polls            []Poll       `yaml:"polls"`
+	Schedules        []Schedule   `yaml:"schedules"`
 }
 
 type Config struct {
-	Timezone string             `yaml:"timezone"` // e.g. "Europe/Moscow"
-	Channels map[string]Channel `yaml:"channels"`
+	Timezone  string             `yaml:"timezone"` // e.g. "Europe/Moscow"
+	Schedules []RootSchedule     `yaml:"schedules"`
+	Channels  map[string]Channel `yaml:"channels"`
 }
 
 func Load(path string) (*Config, error) {
