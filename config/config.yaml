@@ -140,7 +140,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -151,7 +151,7 @@ channels:
             emoji: "❌"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -162,7 +162,7 @@ channels:
             emoji: "❌"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -173,7 +173,7 @@ channels:
             emoji: "❌"
       - name: battle_event
         label: "Ивент-Реконструкция"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -184,7 +184,7 @@ channels:
             emoji: "❌"
   #      - name: picket_patrole
   #        label: "Пикет патруль"
-  #        duration_hours: 72
+  #        duration_hours: 96
   #        allow_multiselect: false
   #        answers:
   #          - text: "Иду"
@@ -240,7 +240,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -251,7 +251,7 @@ channels:
             emoji: "❌"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -262,7 +262,7 @@ channels:
             emoji: "❌"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -273,7 +273,7 @@ channels:
             emoji: "❌"
       - name: battle_event
         label: "Ивент-Реконструкция"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -284,7 +284,7 @@ channels:
             emoji: "❌"
     #      - name: picket_patrole
     #        label: "Пикет патруль"
-    #        duration_hours: 72
+    #        duration_hours: 96
     #        allow_multiselect: false
     #        answers:
     #          - text: "Иду"
@@ -432,7 +432,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -446,7 +446,7 @@ channels:
             emoji_id: "1431203945346498671"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -460,7 +460,7 @@ channels:
             emoji_id: "1431203945346498671"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -474,7 +474,7 @@ channels:
             emoji_id: "1431203945346498671"
       - name: battle_event
         label: "Ивент-Реконструкция"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
          - text: "Иду"
@@ -488,7 +488,7 @@ channels:
            emoji_id: "1431203945346498671"            
 #      - name: picket_patrole
 #        label: "Пикет патруль"
-#        duration_hours: 72
+#        duration_hours: 96
 #        allow_multiselect: false
 #        answers:
 #          - text: "Иду"
@@ -649,7 +649,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"   
@@ -657,7 +657,7 @@ channels:
           - text: "Не иду"    
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -665,7 +665,7 @@ channels:
           - text: "Не иду"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -673,12 +673,93 @@ channels:
           - text: "Не иду"
       - name: battle_event
         label: "Ивент-Реконструкция"
-        duration_hours: 72
+        duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
           - text: "Опоздаю"
           - text: "Не иду"
+
+  first_squad_company_g:
+    team_guild_id: "1356688096078463247"
+    team_role_id: "1443287538935795783"
+    tagging_emoji_id: "1529235897759830238"
+    tagging_emoji_name: "Private"
+    pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1356698988912574475"
+    schedules:
+    #      - poll: friday_event
+    #        channel_id: "1356698988912574475"
+    #        title: "Пятничный ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: training
+    #        channel_id: "1356698988912574475"
+    #        title: "Полковые маневры перед Ивентом ({day}-{date}) в 20:30 по МСК!"
+    #        day: saturday
+    #        at: "21:00"
+    #      - poll: saturday_event
+    #        channel_id: "1356698988912574475"
+    #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1356698988912574475"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1356698988912574475"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
 
   fourth_squad_company_g:
     team_guild_id: "1528480892958281748"
@@ -718,7 +799,7 @@ channels:
     polls:
       - name: friday_event
         label: "Пятничный ивент"
-        duration_hours: 72
+        duration_hours: 120
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -729,7 +810,7 @@ channels:
             emoji: "❌"
       - name: saturday_event
         label: "Субботний ивент"
-        duration_hours: 72
+        duration_hours: 120
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -740,7 +821,7 @@ channels:
             emoji: "❌"
       - name: training
         label: "Полковая тренировка"
-        duration_hours: 72
+        duration_hours: 120
         allow_multiselect: false
         answers:
           - text: "Иду"
@@ -751,7 +832,7 @@ channels:
             emoji: "❌"
       - name: battle_event
         label: "Ивент-Реконструкция"
-        duration_hours: 72
+        duration_hours: 120
         allow_multiselect: false
         answers:
           - text: "Иду"
