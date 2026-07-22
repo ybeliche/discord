@@ -244,58 +244,70 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "✅"
+            emoji_name: "AAAAA"
+            emoji_id: "1528522511526920253"
           - text: "Опоздаю"
-            emoji: "💀"
+            emoji_name: "HMMM"
+            emoji_id: "1528801488246145275"
           - text: "Не иду"
-            emoji: "❌"
+            emoji_name: "Busya"
+            emoji_id: "1528802825599975514"
       - name: saturday_event
         label: "Субботний ивент"
         duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "✅"
+            emoji_name: "AAAAA"
+            emoji_id: "1528522511526920253"
           - text: "Опоздаю"
-            emoji: "💀"
+            emoji_name: "HMMM"
+            emoji_id: "1528801488246145275"
           - text: "Не иду"
-            emoji: "❌"
+            emoji_name: "Busya"
+            emoji_id: "1528802825599975514"
       - name: training
         label: "Полковая тренировка"
         duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "✅"
+            emoji_name: "AAAAA"
+            emoji_id: "1528522511526920253"
           - text: "Опоздаю"
-            emoji: "💀"
+            emoji_name: "HMMM"
+            emoji_id: "1528801488246145275"
           - text: "Не иду"
-            emoji: "❌"
+            emoji_name: "Busya"
+            emoji_id: "1528802825599975514"
       - name: battle_event
         label: "Ивент-Реконструкция"
         duration_hours: 96
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji: "✅"
+            emoji_name: "AAAAA"
+            emoji_id: "1528522511526920253"
           - text: "Опоздаю"
-            emoji: "💀"
+            emoji_name: "HMMM"
+            emoji_id: "1528801488246145275"
           - text: "Не иду"
-            emoji: "❌"
+            emoji_name: "Busya"
+            emoji_id: "1528802825599975514"
     #      - name: picket_patrole
     #        label: "Пикет патруль"
     #        duration_hours: 96
     #        allow_multiselect: false
     #        answers:
     #          - text: "Иду"
-    #            emoji_name: "BOBROFANTERIA"
-    #            emoji_id: "1451138942135959574"
+    #            emoji_name: "AAAAA"
+    #            emoji_id: "1528522511526920253"
     #          - text: "Опоздаю"
-    #            emoji_name: "catlyingonfloor"
-    #            emoji_id: "1452231567228407840"
+    #            emoji_name: "HMMM"
+    #            emoji_id: "1528801488246145275"
     #          - text: "Не иду"
-    #            emoji_name: "cattoshyblush"
-    #            emoji_id: "1452231655942258712"
+    #            emoji_name: "Busya"
+    #            emoji_id: "1528802825599975514"
 
   first_squad_company_a:
     team_guild_id: "1255670937928339557"
