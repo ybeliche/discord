@@ -102,7 +102,7 @@ channels:
     team_role_id: "1528518855352123461"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
-    pick_day: wednesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1528518856644100130"
@@ -697,7 +697,7 @@ channels:
     team_role_id: "1443287538935795783"
     tagging_emoji_id: "1529235897759830238"
     tagging_emoji_name: "Private"
-    pick_day: monday
+    pick_day: wednesday
     main_schedule:
       enabled: true
       channel_id: "1356698988912574475"
