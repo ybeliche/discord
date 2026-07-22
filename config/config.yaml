@@ -773,6 +773,87 @@ channels:
           - text: "Не иду"
             emoji: "❌"
 
+  second_squad_company_g:
+    team_guild_id: "1342920160121720862"
+    team_role_id: "1349298158227951697"
+    tagging_emoji_id: "1475013583984263228"
+    tagging_emoji_name: "2ndSquadCompanyG"
+    pick_day: wednesday
+    main_schedule:
+      enabled: true
+      channel_id: "1342920562896273539"
+    schedules:
+    #      - poll: friday_event
+    #        channel_id: "1342920562896273539"
+    #        title: "Пятничный ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: training
+    #        channel_id: "1342920562896273539"
+    #        title: "Полковые маневры перед Ивентом ({day}-{date}) в 20:30 по МСК!"
+    #        day: saturday
+    #        at: "21:00"
+    #      - poll: saturday_event
+    #        channel_id: "1342920562896273539"
+    #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1342920562896273539"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: friday
+    #        at: "22:00"
+    #      - poll: battle_event
+    #        channel_id: "1342920562896273539"
+    #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    #        day: saturday
+    #        at: "22:00"
+    polls:
+      - name: friday_event
+        label: "Пятничный ивент"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: saturday_event
+        label: "Субботний ивент"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: training
+        label: "Полковая тренировка"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+      - name: battle_event
+        label: "Ивент-Реконструкция"
+        duration_hours: 96
+        allow_multiselect: false
+        answers:
+          - text: "Иду"
+            emoji: "✅"
+          - text: "Опоздаю"
+            emoji: "💀"
+          - text: "Не иду"
+            emoji: "❌"
+
   fourth_squad_company_g:
     team_guild_id: "1528480892958281748"
     team_role_id: "1528480892958281754"
