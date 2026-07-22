@@ -202,7 +202,7 @@ channels:
     team_role_id: "1528519232013205520"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
-    pick_day: wednesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1528519233871544494"
@@ -406,7 +406,7 @@ channels:
     team_role_id: "1391896118333276242"
     tagging_emoji_id: "1436992023470149634"
     tagging_emoji_name: "Infantry_enlisted"
-    pick_day: wednesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1391892746855383124"
@@ -628,7 +628,7 @@ channels:
   fourth_squad_company_a:
     team_guild_id: "1348333465619267584" 
     team_role_id: "1398245739733192714" 
-    pick_day: wednesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1353485917481992202"
@@ -697,7 +697,7 @@ channels:
     team_role_id: "1443287538935795783"
     tagging_emoji_id: "1529235897759830238"
     tagging_emoji_name: "Private"
-    pick_day: wednesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1356698988912574475"
