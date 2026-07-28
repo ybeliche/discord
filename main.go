@@ -175,7 +175,10 @@ func runActionMode(s *discordgo.Session, cfg *config.Config) {
 
 		if ch.TeamRoleID != "" {
 			var tagWg sync.WaitGroup
-			msg := fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**  <:%s:%s>", ch.TeamRoleID, ch.TaggingEmojiName, ch.TaggingEmojiId)
+			msg := fmt.Sprintf("<@&%s>\n\n**Господа! Опросы уже есть, голосуем!**", ch.TeamRoleID)
+			if ch.TaggingEmojiName != "" && ch.TaggingEmojiId != "" {
+				msg += fmt.Sprintf("  <:%s:%s>", ch.TaggingEmojiName, ch.TaggingEmojiId)
+			}
 			for channelID := range postedChannels {
 				tagWg.Add(1)
 				go func(channelID string) {
