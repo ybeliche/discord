@@ -564,11 +564,11 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "Wojak_seen"
-            emoji_id: "1491365429233320056"
+            emoji_name: "CHAAAAAAAAAARRRGE"
+            emoji_id: "1442847287075278991"
           - text: "Опоздаю"
-            emoji_name: "Stydno"
-            emoji_id: "1491366262121435176"
+            emoji_name: "Salli_Nasvaenko"
+            emoji_id: "1529239983632683098"
           - text: "Не иду"
             emoji_name: "Busya"
             emoji_id: "1442280732948037642"
@@ -578,11 +578,11 @@ channels:
         allow_multiselect: false
         answers:
           - text: "Иду"
-            emoji_name: "Pravoslavnenko_2"
-            emoji_id: "1491365889272975380"
+            emoji_name: "CHAAAAAAAAAARRRGE"
+            emoji_id: "1442847287075278991"
           - text: "Опоздаю"
-            emoji_name: "Stydno"
-            emoji_id: "1491366262121435176"
+            emoji_name: "Salli_Nasvaenko"
+            emoji_id: "1529239983632683098"
           - text: "Не иду"
             emoji_name: "Busya"
             emoji_id: "1442280732948037642"
