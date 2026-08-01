@@ -204,8 +204,8 @@ channels:
   second_squad_cavalry:
     team_guild_id: "1528519232005079091"
     team_role_id: "1528519232013205520"
-    tagging_emoji_id: ""
-    tagging_emoji_name: ""
+    tagging_emoji_id: "1528842927776731269"
+    tagging_emoji_name: "LA_TIGERZOUAVEBALL"
     pick_day: wednesday
     main_schedule:
       enabled: true
