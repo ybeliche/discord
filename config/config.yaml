@@ -20,7 +20,7 @@ channels:
     team_role_id: "1501262547423072307"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
-    pick_day: tuesday
+    pick_day: monday
     main_schedule:
       enabled: true
       channel_id: "1501254034261020813"
@@ -984,6 +984,8 @@ channels:
             emoji: "✅"
           - text: "Опоздаю"
             emoji: "💀"
+          - text: "50\50"
+            emoji: "🤔"
           - text: "Не иду"
             emoji: "❌"
       - name: saturday_event
@@ -995,6 +997,8 @@ channels:
             emoji: "✅"
           - text: "Опоздаю"
             emoji: "💀"
+          - text: "50\50"
+            emoji: "🤔️"
           - text: "Не иду"
             emoji: "❌"
       - name: training
@@ -1006,6 +1010,8 @@ channels:
             emoji: "✅"
           - text: "Опоздаю"
             emoji: "💀"
+          - text: "50\50"
+            emoji: "🤔"
           - text: "Не иду"
             emoji: "❌"
       - name: battle_event
@@ -1017,5 +1023,7 @@ channels:
             emoji: "✅"
           - text: "Опоздаю"
             emoji: "💀"
+          - text: "50\50"
+            emoji: "🤔"
           - text: "Не иду"
             emoji: "❌"
