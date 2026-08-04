@@ -998,7 +998,7 @@ channels:
           - text: "Опоздаю"
             emoji: "💀"
           - text: "50\\50"
-            emoji: "🤔️"
+            emoji: "🤔"
           - text: "Не иду"
             emoji: "❌"
       - name: training
