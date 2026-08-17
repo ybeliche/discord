@@ -6,9 +6,9 @@ schedules:
     day: friday
     at: "22:00"
   - poll: training
-    title: "Полковая тренировка перед Ивентом ({day}-{date}) в 21:00 по МСК!"
+    title: " Полковые Маневры ({day}-{date}) в 20:30 по МСК!"
     day: saturday
-    at: "22:00"
+    at: "20:30"
   - poll: saturday_event
     title: "UEC Ивент ({day}-{date}) в 22:00 по МСК!"
     day: saturday
