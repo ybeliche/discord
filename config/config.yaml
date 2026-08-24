@@ -16,42 +16,42 @@ schedules:
 
 channels:
   test_squad:
-    team_guild_id: "1495891095110947038"
-    team_role_id: "1501262547423072307"
+    team_guild_id: "1501182999645917338"
+    team_role_id: "1541392408774975558"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
     pick_day: monday
     main_schedule:
       enabled: true
-      channel_id: "1501254034261020813"
+      channel_id: "1501183000501551227"
     schedules:
     #      - poll: friday_event
-    #        channel_id: "1501254034261020813"
+    #        channel_id: "1501183000501551227"
     #        title: "Пятничный ивент ({date}) UEC в 22:00 по МСК!"
     #        day: friday
     #        at: "22:00"
     #       - poll: training
-    #         channel_id: "1501254034261020813"
+    #         channel_id: "1501183000501551227"
     #         title: "Полковая тренировка перед Ивентом ({date}) в 21:00 по МСК!"
     #         day: saturday
     #         at: "21:00"
     #      - poll: saturday_event
-    #        channel_id: "1501254034261020813"
+    #        channel_id: "1501183000501551227"
     #        title: "Субботний ивент ({day}-{date}) UEC в 22:00 по МСК!"
     #        day: saturday
     #        at: "22:00"
     #      - poll: picket_patrole
-    #        channel_id: "1501254034261020813"
+    #        channel_id: "1501183000501551227"
     #        title: "Полковой Пикет-Патруль ({day}-{date}) UEC в 20:00 по МСК!"
     #        day: sunday
     #        at: "20:00"
     #      - poll: battle_event
-    #        channel_id: "1501254034261020813"
+    #        channel_id: "1501183000501551227"
     #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
     #        day: friday
     #        at: "22:00"
     #      - poll: battle_event
-    #        channel_id: "1501254034261020813"
+    #        channel_id: "1501183000501551227"
     #        title: "Реконструкция Первого Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
     #        day: saturday
     #        at: "22:00"
