@@ -2,16 +2,16 @@ timezone: "Europe/Moscow"
 
 schedules:
   - poll: friday_event
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    title: "UEC Ивент ({day}-{date}) в 22:00 по МСК!"
     day: friday
     at: "22:00"
   - poll: training
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+    title: " Полковые Маневры ({day}-{date}) в 20:30 по МСК!"
     day: saturday
-    at: "22:00"
+    at: "20:30"
   - poll: saturday_event
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-    day: sunday
+    title: "UEC Ивент ({day}-{date}) в 22:00 по МСК!"
+    day: saturday
     at: "22:00"
 
 channels:
