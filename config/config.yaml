@@ -1,18 +1,22 @@
 timezone: "Europe/Moscow"
 
 schedules:
-  - poll: friday_event
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+  - poll: vacation_event
+    title: "Ивентов нет! Отдыхаем господа! Всем пива!"
     day: friday
     at: "22:00"
-  - poll: training
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-    day: saturday
-    at: "22:00"
-  - poll: saturday_event
-    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
-    day: sunday
-    at: "22:00"
+#  - poll: friday_event
+#    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#    day: friday
+#    at: "22:00"
+#  - poll: training
+#    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#    day: saturday
+#    at: "22:00"
+#  - poll: saturday_event
+#    title: "Реконструкция Второго Сражения при Булл-Ран ({day}-{date}) в 22:00 по МСК!"
+#    day: sunday
+#    at: "22:00"
 
 channels:
   test_squad:
@@ -100,6 +104,13 @@ channels:
             emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 
   first_squad_cavalry:
     team_guild_id: "1528518855306121236"
@@ -186,6 +197,13 @@ channels:
             emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
   #      - name: picket_patrole
   #        label: "Пикет патруль"
   #        duration_hours: 96
@@ -298,6 +316,13 @@ channels:
           - text: "Не иду"
             emoji_name: "Busya"
             emoji_id: "1528802825599975514"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
     #      - name: picket_patrole
     #        label: "Пикет патруль"
     #        duration_hours: 96
@@ -390,6 +415,13 @@ channels:
             emoji: "✅"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 96
@@ -501,7 +533,14 @@ channels:
            emoji_id: "1430805290818998304"
          - text: "Не иду"
            emoji_name: "Stidno"
-           emoji_id: "1431203945346498671"            
+           emoji_id: "1431203945346498671"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 96
@@ -614,6 +653,13 @@ channels:
           - text: "Не иду"
             emoji_name: "Busya"
             emoji_id: "1442280732948037642"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 #      - name: picket_patrole
 #        label: "Пикет патруль"
 #        duration_hours: 96
@@ -695,6 +741,13 @@ channels:
           - text: "Иду"
           - text: "Опоздаю"
           - text: "Не иду"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 
   first_squad_company_g:
     team_guild_id: "1356688096078463247"
@@ -776,6 +829,13 @@ channels:
             emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 
   second_squad_company_g:
     team_guild_id: "1342920160121720862"
@@ -857,6 +917,13 @@ channels:
             emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 
   third_squad_company_g:
     team_guild_id: "1442092009883045962"
@@ -938,6 +1005,13 @@ channels:
             emoji: "💀"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
 
   fourth_squad_company_g:
     team_guild_id: "1528480892958281748"
@@ -1027,3 +1101,10 @@ channels:
             emoji: "🤔"
           - text: "Не иду"
             emoji: "❌"
+      - name: vacation_event
+        label: "Отпуск"
+        duration_hours: 72
+        allow_multiselect: false
+        answers:
+          - text: "Ура!"
+            emoji: "🍺"
