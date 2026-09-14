@@ -2,7 +2,7 @@ timezone: "Europe/Moscow"
 
 schedules:
   - poll: vacation_event
-    title: "Ивентов нет! Отдыхаем господа! Всем пива!"
+    title: "Ивентов нет! Отдыхаем, господа! Всем пива! 🍻"
     day: friday
     at: "22:00"
 #  - poll: friday_event
