@@ -10,9 +10,9 @@ schedules:
 #   day: saturday
 #   at: "20:00"
  - poll: saturday_event
-   title: "Зомби-Ивент ({day}-{date}) в 22:00 по МСК!"
+   title: "Зомби-Ивент ({day}-{date}) в 21:00 по МСК!"
    day: saturday
-   at: "22:00"
+   at: "21:00"
 # - poll: vacation_event
 #   title: "Ивентов нет! Отдыхаем, господа! Всем пива! 🍻"
 #   day: friday
