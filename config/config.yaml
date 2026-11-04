@@ -2,9 +2,9 @@ timezone: "Europe/Moscow"
 
 schedules:
  - poll: friday_event
-   title: "UEC-Ивент ({day}-{date}) в 22:00 по МСК!"
+   title: "UEC-Ивент ({day}-{date}) в 23:00 по МСК!"
    day: friday
-   at: "22:00"
+   at: "23:00"
 # - poll: training
 #   title: "Полковая тренировка перед Ивентом ({day}-{date}) в 21:00 по МСК!"
 #   day: saturday
