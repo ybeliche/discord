@@ -2,17 +2,17 @@ timezone: "Europe/Moscow"
 
 schedules:
  - poll: friday_event
-   title: "UEC-Ивент ({day}-{date}) в 23:00 по МСК!"
+   title: "Внутренний ивент ({day}-{date}) в 22:30 по МСК!"
    day: friday
-   at: "23:00"
-# - poll: training
-#   title: "Полковая тренировка перед Ивентом ({day}-{date}) в 21:00 по МСК!"
-#   day: saturday
-#   at: "20:00"
+   at: "22:30"
+- poll: training
+  title: "Полковые манёвры ({day}-{date}) в 21:00 по МСК!"
+  day: friday
+  at: "21:00"
  - poll: saturday_event
-   title: "Внутренний Ивент ({day}-{date}) в 22:00 по МСК!"
+   title: "Ивент-реконструкция сражения при Геттисберге ({day}-{date}) в 23:00 по МСК!"
    day: saturday
-   at: "22:00"
+   at: "23:00"
 # - poll: vacation_event
 #   title: "Ивентов нет! Отдыхаем, господа! Всем пива! 🍻"
 #   day: friday
