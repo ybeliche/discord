@@ -117,7 +117,7 @@ channels:
     team_role_id: "1528518855352123461"
     tagging_emoji_id: ""
     tagging_emoji_name: ""
-    pick_day: wednesday
+    pick_day: tuesday
     main_schedule:
       enabled: true
       channel_id: "1528518856644100130"
@@ -224,7 +224,7 @@ channels:
     team_role_id: "1528519232013205520"
     tagging_emoji_id: "1528842927776731269"
     tagging_emoji_name: "LA_TIGERZOUAVEBALL"
-    pick_day: wednesday
+    pick_day: tuesday
     main_schedule:
       enabled: true
       channel_id: "1528519233871544494"
